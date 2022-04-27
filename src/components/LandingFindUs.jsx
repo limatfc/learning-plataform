@@ -1,5 +1,5 @@
 export default function LandingFindUs({ item }) {
-  const list = item.info.map((item) => <li>{item}</li>);
+  const list = item.info.map((item) => <li key={item}>{item}</li>);
 
   return (
     <div>

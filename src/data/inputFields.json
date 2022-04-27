@@ -1,0 +1,48 @@
+{
+  "login": {
+    "email": {
+      "type": "email",
+      "label": "User Email",
+      "placeholder": "email@email.com",
+      "errorMessage": "Email field must contain an '@' symbol"
+    },
+    "pass": {
+      "type": "password",
+      "label": "User Password",
+      "placeholder": "********",
+      "errorMessage": "Password must contain at least 8 characters"
+    }
+  },
+  "signUp": {
+    "childName": {
+      "type": "text",
+      "label": "Student's first and last names",
+      "placeholder": "John Doe",
+      "errorMessage": "Child name must be completed"
+    },
+    "school": {
+      "type": "text",
+      "label": "School name",
+      "placeholder": "International School",
+      "errorMessage": "School must be completed"
+    },
+    "parentName": {
+      "type": "text",
+      "label": "Parent's first and last names",
+      "placeholder": "John Doe",
+      "errorMessage": "Parent name must be completed"
+    },
+    "email": {
+      "type": "email",
+      "label": "Parent Email",
+      "placeholder": "email@email.com",
+      "errorMessage": "Email field must contain an '@' symbol"
+    },
+    "pass": {
+      "type": "password",
+      "label": "User Password",
+      "placeholder": "********",
+      "errorMessage": "Password must contain at least 8 characters"
+    }
+  }
+}
