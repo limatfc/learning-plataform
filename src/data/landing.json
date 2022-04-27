@@ -1,0 +1,39 @@
+{
+  "courses": [
+    {
+      "text": "We use everyday activities to contextualize our lessons",
+      "imageURL": "landing-03.png",
+      "imageDescription": "an halter, a racket, a football helmet, a baskball, boxing gloves, and a football in an orange triangular background."
+    },
+    {
+      "text": "Our classes are playfull to maxmize students participation",
+      "imageURL": "landing-04.png",
+      "imageDescription": "a videogame controller, a diamond, a sword, a card and a browser window in a green background."
+    },
+    {
+      "text": "We believe that kids learn to speak English... by speaking!",
+      "imageURL": "landing-05.png",
+      "imageDescription": "a boy saying pencil, carrying a ruler and 2 books in an orange background."
+    }
+  ],
+  "findUs": [
+    {
+      "icon": "location.png",
+      "description": "a location icon",
+      "title": "We are located at",
+      "info": ["Sveavägen 162", "113 46", "Stockholm"]
+    },
+    {
+      "icon": "telephone.png",
+      "description": "a telephone icon",
+      "title": "Our contact numbers are",
+      "info": ["0765499876", "0765809456", "0724560937"]
+    },
+    {
+      "icon": "email.png",
+      "description": "an at symbol icon",
+      "title": "Our email addresses are",
+      "info": ["eenglish@eenglish.com", "contact.eeenglish@eenglish.con"]
+    }
+  ]
+}
