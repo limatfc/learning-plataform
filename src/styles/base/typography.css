@@ -1,0 +1,27 @@
+@font-face {
+  font-family: "Handlee";
+  src: local("Handlee"),
+    url(../../assets/fonts/Handlee-Regular.ttf) format("truetype");
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 25px;
+  font-weight: normal;
+}
+p {
+  font-size: 18px;
+}
+.label {
+  font-size: 20px;
+}
+small {
+  font-size: 16px;
+}
