@@ -44,5 +44,13 @@
       "placeholder": "********",
       "errorMessage": "Password must contain at least 8 characters"
     }
+  },
+  "resetPassword": {
+    "email": {
+      "type": "email",
+      "label": "Parent Email",
+      "placeholder": "email@email.com",
+      "errorMessage": "Email field must contain an '@' symbol"
+    }
   }
 }
