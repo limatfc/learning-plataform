@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import InputField from "../components/InputField";
 import inputData from "../data/inputFields.json";
 
@@ -18,6 +19,8 @@ export default function ResetPassword() {
       <form>
         <InputField setup={info.email} actions={[setEmail, check]} />
         <button>Reset password</button>
+        <p>Remembered your password?</p>
+        <Link to="/login">Login</Link>
       </form>
     </div>
   );

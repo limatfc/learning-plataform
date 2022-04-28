@@ -18,11 +18,11 @@ export default function InputField({ setup, actions }) {
         <input
           type={type}
           placeholder={placeholder}
-          onChange={setter}
+          onChange={(event) => setter(event.target.value)}
           onBlur={onBlurHandler}
         />
       </label>
-      {error && <small>{errorMessage}</small>}
+      <small>{error && errorMessage}</small>
     </div>
   );
 }
