@@ -10,8 +10,8 @@
     "label": "Go back to the dashboard"
   },
   "signedOut": {
-    "message": "Ops, looks like you are trying to access a page that does not exist. Try logging in",
-    "link": "/login",
-    "label": "Go to the login page"
+    "message": "Ops, looks like you are trying to access a page that does not exist",
+    "link": "/",
+    "label": "Go to the home page"
   }
 }

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import {
   setLocalStorage,
   getLocalStorage,
@@ -11,20 +11,8 @@ const localStorageKey = "userUID";
 export default function UserProvider({ children }) {
   const [uid, setUid] = useState();
   const [user, setUser] = useState();
-
-  // useEffect(() => {
-  //   async function loginUserFromLocalStorage() {
-  //     const uid = getLocalStorage(localStorageKey);
-  //     if (uid) {
-  //       const userData = await readDoc("user", uid);
-  //       if (userData) {
-  //         setUser({uid,...userData });
-  //       }
-  //     }
-  //   }
-
-  //   loginUserFromLocalStorage();
-  // }, []);
+  const [courses, setCourses] = useState([]);
+  const [activities, setActivities] = useState([]);
 
   useEffect(() => {
     if (uid) {
@@ -60,11 +48,23 @@ export default function UserProvider({ children }) {
     setUser(userInfo);
   }
 
+  const coursesHandler = useCallback((courses) => {
+    setCourses(courses);
+  }, []);
+
+  const activitiesHandler = useCallback((activities) => {
+    setActivities(activities);
+  }, []);
+
   const value = {
     uid,
     user,
+    courses,
+    activities,
     uidHandler,
     userHandler,
+    coursesHandler,
+    activitiesHandler,
   };
 
   return <userContext.Provider value={value}>{children}</userContext.Provider>;
