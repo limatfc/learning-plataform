@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Modal from "../components/Modal";
 import ConfirmationMessage from "../components/ConfirmationMessage";
@@ -6,12 +6,7 @@ import SignUpForm from "../components/SignUpForm";
 
 export default function SignUp() {
   const [status, setStatus] = useState(null);
-  const [showModal, setShowModal] = useState(false);
   const success = "YAY, user created successfully!";
-
-  useEffect(() => {
-    if (status === 1) setShowModal(true);
-  }, [status]);
 
   let label = status === 0 ? "Loading" : "Create account";
 

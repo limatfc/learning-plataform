@@ -29,7 +29,6 @@ export default function SignUpForm({ actions, label }) {
     const uid = await createUser(email, password);
     setStatus(2);
     if (uid) {
-      uidHandler(uid);
       const inputedData = { childName, school, parentName, role: "student" };
       user = await addDoc("user", uid, inputedData);
     }
