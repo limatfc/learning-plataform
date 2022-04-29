@@ -1,5 +1,9 @@
 import { firebaseAuth } from "./firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  sendPasswordResetEmail,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 import onFailure from "../logic/onFailure";
 
 export async function createUser(email, password) {
@@ -15,5 +19,31 @@ export async function createUser(email, password) {
   } catch (error) {
     onFailure(error);
   }
+  return data;
+}
+
+export async function recoverUser(email) {
+  let data = null;
+
+  try {
+    await sendPasswordResetEmail(firebaseAuth, email);
+    data = 1;
+  } catch (error) {
+    onFailure(error);
+    data = null;
+  }
+  return data;
+}
+
+export async function loginUser(email, password) {
+  let data = null;
+
+  try {
+    const uid = await signInWithEmailAndPassword(firebaseAuth, email, password);
+    data = uid.user.uid;
+  } catch (error) {
+    onFailure(error);
+  }
+
   return data;
 }

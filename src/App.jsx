@@ -1,21 +1,20 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import NavigationBar from "./components/NavigationBar";
-import Landing from "./pages/Landing";
-import Login from "./pages/Login";
-import ResetPassword from "./pages/ResetPassword";
-import SignUp from "./pages/SignUp";
+import SignedInTeacher from "./routes/SignedInTeacher";
+import SignedInStudent from "./routes/SignedInStudent";
+import SignedOut from "./routes/SignedOut";
+import useUserProvider from "./store/useUserProvider";
 import "./styles/styles.css";
 
 export default function App() {
+  const { uid, user } = useUserProvider();
+
   return (
     <BrowserRouter>
       <NavigationBar />
-      <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/reset-password" element={<ResetPassword />} />
-        <Route path="/sign-up" element={<SignUp />} />
-      </Routes>
+      {!uid && <SignedOut />}
+      {uid && user?.role === "teacher" && <SignedInTeacher />}
+      {uid && user?.role === "student" && <SignedInStudent />}
     </BrowserRouter>
   );
 }

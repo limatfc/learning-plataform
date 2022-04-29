@@ -1,4 +1,5 @@
 export default function onFailure(error) {
-  alert(error);
-  console.error(error);
+  const failure = `Ops, it seems like we got this error: ${error}`;
+
+  alert(failure);
 }
