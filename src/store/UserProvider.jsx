@@ -62,6 +62,13 @@ export default function UserProvider({ children }) {
     setCourses(copyCourses);
   }
 
+  function deleteCourse(id) {
+    const copyCourses = [...courses];
+    let findIndex = copyCourses.findIndex((item) => item.id === id);
+    copyCourses.splice(findIndex, 1);
+    setCourses(copyCourses);
+  }
+
   const coursesHandler = useCallback((courses) => {
     setCourses(courses);
   }, []);
@@ -81,6 +88,7 @@ export default function UserProvider({ children }) {
     activitiesHandler,
     addCourse,
     editCourse,
+    deleteCourse,
   };
 
   return <userContext.Provider value={value}>{children}</userContext.Provider>;

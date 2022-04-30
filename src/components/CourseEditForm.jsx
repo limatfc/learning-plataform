@@ -36,6 +36,9 @@ export default function CourseEditForm({ oldCourse, setEditForm }) {
     }
   }
 
+  let label = "";
+  status === 0 ? (label = "Loading") : (label = "Confirm changes");
+
   if (status === 1)
     return <CompleteMessage message={"edited"} setShowModal={setEditForm} />;
 
@@ -47,7 +50,7 @@ export default function CourseEditForm({ oldCourse, setEditForm }) {
         <InputField setup={info.descr} actions={[setDescription, check]} />
         <InputField setup={info.imageURL} actions={[setImgDescr, check]} />
         <InputField setup={info.imgDescr} actions={[setImgURL, check]} />
-        <button type="submit">Confirm changes</button>
+        <button type="submit">{label}</button>
         <button type="button" onClick={() => setEditForm(false)}>
           Cancel
         </button>

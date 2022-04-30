@@ -9,7 +9,7 @@ import CourseEditForm from "./CourseEditForm";
 export default function ActionCourseCard({ course }) {
   const [deleteModal, setDeleteModal] = useState(false);
   const [editForm, setEditForm] = useState(false);
-  console.log(course);
+
   return (
     <div>
       <Link to={`/dashboard-${course.nameURL}`}>
@@ -24,7 +24,7 @@ export default function ActionCourseCard({ course }) {
       </button>
       <Modal>
         {deleteModal && (
-          <ConfirmDelete oldName={course} setDeleteModal={setDeleteModal} />
+          <ConfirmDelete oldCourse={course} setDeleteModal={setDeleteModal} />
         )}
         {editForm && (
           <CourseEditForm oldCourse={course} setEditForm={setEditForm} />
