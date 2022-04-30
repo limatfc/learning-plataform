@@ -64,3 +64,15 @@ export async function addDocumentWithNoId(path, content) {
 
   return data;
 }
+
+export async function editDocument(path, documentId, content) {
+  let data = "";
+  try {
+    const cityRef = doc(fireStore, path, documentId);
+    setDoc(cityRef, content, { merge: true });
+    data = "";
+  } catch (error) {
+    onFailure(error);
+  }
+  return data;
+}

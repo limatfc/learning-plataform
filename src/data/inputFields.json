@@ -61,7 +61,7 @@
       "required": true
     }
   },
-  "CourseEditForm": {
+  "courseEditForm": {
     "name": {
       "type": "text",
       "label": "Name",
@@ -74,6 +74,20 @@
       "label": "Description",
       "placeholder": "In this course you will learn...",
       "errorMessage": "Description must be completed",
+      "required": true
+    },
+    "imageURL": {
+      "type": "text",
+      "label": "Image link",
+      "placeholder": "http://google.com/image",
+      "errorMessage": "",
+      "required": false
+    },
+    "imgDescr": {
+      "type": "text",
+      "label": "Image description",
+      "placeholder": "A black cat sitting on a window",
+      "errorMessage": "Image description must be completed",
       "required": true
     }
   },

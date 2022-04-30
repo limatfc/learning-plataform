@@ -16,9 +16,11 @@ export default function CourseCreateForm({ setShowModal }) {
   const check = (item) => item !== "";
   const emptyCheck = () => {};
   const info = data.courseCreateForm;
+  const checkEmpty = check(name) || check(description) || check(imgDescription);
 
   async function onCreate(event) {
     event.preventDefault();
+    if (!checkEmpty) return null;
     const nameURL = editName(name);
     const mainData = { name, description, imageURL, nameURL };
     const extraData = { imageDescription: imgDescription, students: [] };
