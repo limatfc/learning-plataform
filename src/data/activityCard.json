@@ -1,0 +1,27 @@
+[
+  {
+    "sectionTitle": "Videos",
+    "sectionDbName": "Videos",
+    "icon": "video.png"
+  },
+  {
+    "sectionTitle": "Book activities",
+    "sectionDbName": "Books",
+    "icon": "book.png"
+  },
+  {
+    "sectionTitle": "Games",
+    "sectionDbName": "Games",
+    "icon": "game.png"
+  },
+  {
+    "sectionTitle": "Images",
+    "sectionDbName": "Images",
+    "icon": "image.png"
+  },
+  {
+    "sectionTitle": "Have fun at home",
+    "sectionDbName": "Home",
+    "icon": "home.png"
+  }
+]
