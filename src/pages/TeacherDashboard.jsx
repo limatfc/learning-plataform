@@ -12,7 +12,7 @@ export default function TeacherDashboard() {
   const { coursesHandler, courses, user } = useUserProvider();
   const { status } = useReadData(coursesHandler, "courses");
   const courseCards = courses.map((course) => (
-    <ActionCourseCard course={course} key={course.id} />
+    <ActionCourseCard key={course.id} course={course} />
   ));
 
   if (status === 0) return <Loading />;

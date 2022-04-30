@@ -4,6 +4,7 @@ import { useState } from "react";
 import { addDocumentWithNoId } from "../scripts/firebase/fireStore";
 import { editName } from "../scripts/logic/editName";
 import useUserProvider from "../store/useUserProvider";
+import CompleteMessage from "./CompleteMessage";
 
 export default function CourseCreateForm({ setShowModal }) {
   const { addCourse } = useUserProvider();
@@ -19,19 +20,16 @@ export default function CourseCreateForm({ setShowModal }) {
   async function onCreate(event) {
     event.preventDefault();
     const nameURL = editName(name);
-    const inputedData = {
-      name,
-      description,
-      imageURL,
-      nameURL,
-      imageDescription: imgDescription,
-      students: [],
-    };
+    const mainData = { name, description, imageURL, nameURL };
+    const extraData = { imageDescription: imgDescription, students: [] };
     setStatus(0);
-    const result = await addDocumentWithNoId("courses", inputedData);
+    const result = await addDocumentWithNoId("courses", {
+      ...mainData,
+      ...extraData,
+    });
     if (result === "") {
       setStatus(1);
-      addCourse(inputedData);
+      addCourse({ ...mainData, ...extraData });
     }
   }
 
@@ -39,14 +37,7 @@ export default function CourseCreateForm({ setShowModal }) {
   status === 0 ? (label = "Loading") : (label = "Create new course");
 
   if (status === 1)
-    return (
-      <div className="overlayer">
-        <p>YAY, course created successfully!</p>
-        <button type="button" onClick={() => setShowModal(false)}>
-          Close
-        </button>
-      </div>
-    );
+    return <CompleteMessage message={"created"} setShowModal={setShowModal} />;
 
   return (
     <div className="overlayer">
