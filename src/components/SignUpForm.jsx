@@ -2,12 +2,10 @@ import { useState } from "react";
 import InputField from "../components/InputField";
 import inputData from "../data/inputFields.json";
 import { createUser } from "../scripts/firebase/auth";
-import { addDoc } from "../scripts/firebase/fireStore";
-import useUserProvider from "../store/useUserProvider";
+import { addDocument } from "../scripts/firebase/fireStore";
 
 export default function SignUpForm({ actions, label }) {
   const { setStatus } = actions;
-  const { uidHandler } = useUserProvider();
   const [childName, setChildName] = useState("");
   const [school, setSchool] = useState("");
   const [parentName, setParentName] = useState("");
@@ -30,7 +28,7 @@ export default function SignUpForm({ actions, label }) {
     setStatus(2);
     if (uid) {
       const inputedData = { childName, school, parentName, role: "student" };
-      user = await addDoc("user", uid, inputedData);
+      user = await addDocument("user", uid, inputedData);
     }
     setStatus(2);
     if (user === "") {

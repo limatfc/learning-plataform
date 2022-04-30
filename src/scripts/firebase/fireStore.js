@@ -1,8 +1,15 @@
 import { fireStore } from "./firebase";
-import { doc, setDoc, getDoc, collection, getDocs } from "firebase/firestore";
+import {
+  doc,
+  setDoc,
+  getDoc,
+  collection,
+  getDocs,
+  addDoc,
+} from "firebase/firestore";
 import onFailure from "../logic/onFailure";
 
-export async function addDoc(path, id, content) {
+export async function addDocument(path, id, content) {
   let data = null;
 
   try {
@@ -15,7 +22,7 @@ export async function addDoc(path, id, content) {
   return data;
 }
 
-export async function readDoc(path, id) {
+export async function readDocument(path, id) {
   let data = null;
 
   try {
@@ -39,6 +46,18 @@ export async function getCollection(path) {
       return { id: item.id, ...item.data() };
     });
     data = documents;
+  } catch (error) {
+    onFailure(error);
+  }
+
+  return data;
+}
+
+export async function addDocumentWithNoId(path, content) {
+  let data = null;
+  try {
+    await addDoc(collection(fireStore, path), content);
+    data = "";
   } catch (error) {
     onFailure(error);
   }

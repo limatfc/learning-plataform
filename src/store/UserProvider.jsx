@@ -3,7 +3,7 @@ import {
   setLocalStorage,
   getLocalStorage,
 } from "../scripts/localStorage/localStorage";
-import { readDoc } from "../scripts/firebase/fireStore";
+import { readDocument } from "../scripts/firebase/fireStore";
 import userContext from "./user-context";
 
 const localStorageKey = "userUID";
@@ -33,7 +33,7 @@ export default function UserProvider({ children }) {
   useEffect(() => {
     async function loadUser() {
       if (uid) {
-        const userData = await readDoc("user", uid);
+        const userData = await readDocument("user", uid);
         setUser(userData);
       }
     }
@@ -46,6 +46,12 @@ export default function UserProvider({ children }) {
 
   function userHandler(userInfo) {
     setUser(userInfo);
+  }
+
+  function addCourse(inputedData) {
+    const copyCourses = [...courses];
+    copyCourses.push(inputedData);
+    setCourses(copyCourses);
   }
 
   const coursesHandler = useCallback((courses) => {
@@ -65,6 +71,7 @@ export default function UserProvider({ children }) {
     userHandler,
     coursesHandler,
     activitiesHandler,
+    addCourse,
   };
 
   return <userContext.Provider value={value}>{children}</userContext.Provider>;

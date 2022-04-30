@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import InputField from "../components/InputField";
 import data from "../data/inputFields.json";
 import { loginUser } from "../scripts/firebase/auth";
-import { readDoc } from "../scripts/firebase/fireStore";
+import { readDocument } from "../scripts/firebase/fireStore";
 import useUserProvider from "../store/useUserProvider";
 import navigationHandler from "../scripts/logic/navigation-handler";
 
@@ -25,7 +25,7 @@ export default function Login() {
     const uid = await loginUser(email, password);
     if (uid) {
       uidHandler(uid);
-      user = await readDoc("user", uid);
+      user = await readDocument("user", uid);
       setStatus(1);
     }
     setStatus(2);
