@@ -1,25 +1,14 @@
-import { useEffect, useState } from "react";
-import { getCollection } from "../scripts/firebase/fireStore";
 import { useParams } from "react-router-dom";
+import useReadData from "../hooks/useReadData";
 import useUserProvider from "../store/useUserProvider";
 import Loading from "./Loading";
-import FilterCards from "../components/FilterCards";
+import FilterActivities from "../components/FilterActivities";
 
 export default function StudentCourse() {
-  const [status, setStatus] = useState(null);
-  const { courses, activitiesHandler, activities } = useUserProvider();
+  const { courses, coursesHandler } = useUserProvider();
+  const { status } = useReadData(coursesHandler, "courses");
   const { course } = useParams();
   const find = courses.find((item) => item.nameURL === course);
-
-  useEffect(() => {
-    async function readData() {
-      setStatus(0);
-      const activities = await getCollection(`courses/${find.id}/content`);
-      activitiesHandler(activities);
-      setStatus(1);
-    }
-    readData();
-  }, [activitiesHandler, find.id]);
 
   if (status === 0) return <Loading />;
   return (
@@ -30,7 +19,7 @@ export default function StudentCourse() {
       </header>
       <div>
         <h2> {find.name} fun activities</h2>
-        <FilterCards activities={activities} />
+        <FilterActivities find={find} />
       </div>
     </div>
   );
