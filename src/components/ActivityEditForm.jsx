@@ -1,7 +1,7 @@
-export default function ActivityEditForm({ oldCourse }) {
+export default function ActivityEditForm({ setup }) {
   return (
     <div className="overlayer">
-      <h1>EditForm</h1>
+      <h1>Edit file Form</h1>
     </div>
   );
 }

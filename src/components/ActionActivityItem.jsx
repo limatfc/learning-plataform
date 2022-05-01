@@ -7,11 +7,11 @@ import camera from "../assets/icons/camera.png";
 import play from "../assets/icons/play.png";
 import garbage from "../assets/icons/garbage.png";
 import edit from "../assets/icons/edit.png";
-import ActivityEditForm from "./ActivityEditForm";
 import useUserProvider from "../store/useUserProvider";
+import ActivityEditForm from "./ActivityEditForm";
 
 export default function ActionActivityItem({ item, courseId }) {
-  const { deleteActivity } = useUserProvider();
+  const { deleteActivity, editActivity } = useUserProvider();
   const [deleteModal, setDeleteModal] = useState(false);
   const [editForm, setEditForm] = useState(false);
   const path = `courses/${courseId}/content`;
@@ -30,7 +30,7 @@ export default function ActionActivityItem({ item, courseId }) {
       <button onClick={() => setDeleteModal(true)}>
         <img src={garbage} alt="a trash can icon" />
       </button>
-      <button>
+      <button onClick={() => setEditForm(true)}>
         <img src={edit} alt="the edit icon" />
       </button>
       <Modal>
@@ -38,7 +38,7 @@ export default function ActionActivityItem({ item, courseId }) {
           <ConfirmDelete setup={[item, path, setDeleteModal, deleteActivity]} />
         )}
         {editForm && (
-          <ActivityEditForm oldCourse={item} setEditForm={setEditForm} />
+          <ActivityEditForm setup={[item, path, setEditForm, editActivity]} />
         )}
       </Modal>
     </div>
