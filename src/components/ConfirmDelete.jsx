@@ -27,7 +27,7 @@ export default function ConfirmDelete({ oldCourse, setDeleteModal }) {
 
   return (
     <div className="overlayer">
-      <h2>Are you sure you want to delete the {oldCourse.name} course?</h2>
+      <h2>Are you sure you want to delete the {oldCourse.name} item?</h2>
       <button onClick={onDelete}>{label}</button>
       <button onClick={() => setDeleteModal(false)}>Cancel</button>
     </div>

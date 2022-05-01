@@ -10,18 +10,22 @@ export default function ActionSectionCard({ find }) {
     activitiesHandler,
     `courses/${find.id}/content/`
   );
-  
+
   if (status === 0) return null;
   if (status === 2) return <Error setup="" />;
-  
-  return <div>{data.map((item) => (
-    <div key={item.id}>
-      <img src={require(`../assets/icons/${item.icon}`)} alt="an icon" />
-      <h3>{item.sectionTitle}</h3>
-      <ActionActivityCard
-        activities={activities}
-        sectionDbName={item.sectionDbName}
-      />
+
+  return (
+    <div>
+      {data.map((item) => (
+        <div key={item.id}>
+          <img src={require(`../assets/icons/${item.icon}`)} alt="an icon" />
+          <h3>{item.sectionTitle}</h3>
+          <ActionActivityCard
+            activities={activities}
+            sectionDbName={item.sectionDbName}
+          />
+        </div>
+      ))}
     </div>
-  ))}</div>;
+  );
 }
