@@ -29,7 +29,7 @@ export default function CourseCreateForm({ setShowModal }) {
       ...mainData,
       ...extraData,
     });
-    if (result === "") {
+    if (result.data === "") {
       setStatus(1);
       addCourse({ ...mainData, ...extraData });
     }

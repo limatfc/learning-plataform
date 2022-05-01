@@ -76,6 +76,12 @@ export default function UserProvider({ children }) {
     setActivities(copyActivity);
   }
 
+  function addActivity(inputedData) {
+    const copyActivity = [...activities];
+    copyActivity.push(inputedData);
+    setActivities(copyActivity);
+  }
+
   const coursesHandler = useCallback((courses) => {
     setCourses(courses);
   }, []);
@@ -97,6 +103,7 @@ export default function UserProvider({ children }) {
     editCourse,
     deleteCourse,
     deleteActivity,
+    addActivity,
   };
 
   return <userContext.Provider value={value}>{children}</userContext.Provider>;

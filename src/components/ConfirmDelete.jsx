@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { deleteFile } from "../scripts/firebase/cloudStorage";
 import { deleteDocument } from "../scripts/firebase/fireStore";
 import CompleteMessage from "./CompleteMessage";
 
@@ -13,6 +14,9 @@ export default function ConfirmDelete({ setup }) {
     if (result === "") {
       stateUpdatter(item.id);
       setStatus(1);
+    }
+    if (item.type === "file" || item.type === "image") {
+      deleteFile(`activity/${item.id}.png`);
     }
   }
 

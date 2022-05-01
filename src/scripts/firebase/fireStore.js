@@ -56,14 +56,15 @@ export async function getCollection(path) {
 
 export async function addDocumentWithNoId(path, content) {
   let data = null;
+  let uid = "";
   try {
-    await addDoc(collection(fireStore, path), content);
+    uid = await addDoc(collection(fireStore, path), content);
     data = "";
   } catch (error) {
     onFailure(error);
   }
 
-  return data;
+  return { data, id: uid.id };
 }
 
 export async function editDocument(path, documentId, content) {
