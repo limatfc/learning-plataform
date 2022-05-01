@@ -12,7 +12,7 @@ export default function ActionCourseCard({ course }) {
 
   return (
     <div>
-      <Link to={`/dashboard-${course.nameURL}`}>
+      <Link to={`/teacher-dashboard/${course.nameURL}`}>
         <img src={course.imageURL} alt={course.imageDescription} />
         <span>{course.name}</span>
       </Link>

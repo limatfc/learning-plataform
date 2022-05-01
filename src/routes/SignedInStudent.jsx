@@ -16,7 +16,7 @@ export default function SignedInStudent() {
       <Route path="/reset-password" element={<ResetPassword />} />
       <Route path="/sign-up" element={<SignUp />} />
       <Route path="/student-dashboard" element={<StudentDashboard />} />
-      <Route path="/dashboard-:course" element={<StudentCourse />} />
+      <Route path="/student-dashboard/:course" element={<StudentCourse />} />
       <Route path="*" element={<Error setup={errorRoutes.signedInStudent} />} />
     </Routes>
   );
