@@ -8,11 +8,13 @@ import play from "../assets/icons/play.png";
 import garbage from "../assets/icons/garbage.png";
 import edit from "../assets/icons/edit.png";
 import ActivityEditForm from "./ActivityEditForm";
+import useUserProvider from "../store/useUserProvider";
 
-export default function ActionActivityItem({ item }) {
+export default function ActionActivityItem({ item, courseId }) {
+  const { deleteActivity } = useUserProvider();
   const [deleteModal, setDeleteModal] = useState(false);
   const [editForm, setEditForm] = useState(false);
-
+  const path = `courses/${courseId}/content`;
   let imageSrc = "";
   if (item.type === "file") imageSrc = file;
   if (item.type === "video") imageSrc = play;
@@ -20,7 +22,7 @@ export default function ActionActivityItem({ item }) {
   if (item.type === "game") imageSrc = control;
 
   return (
-    <div key={item.id}>
+    <div>
       <a href={item.url} rel="noreferrer" target="_blank">
         <img src={imageSrc} alt="an icon" />
         {item.name}
@@ -33,7 +35,7 @@ export default function ActionActivityItem({ item }) {
       </button>
       <Modal>
         {deleteModal && (
-          <ConfirmDelete oldCourse={item} setDeleteModal={setDeleteModal} />
+          <ConfirmDelete setup={[item, path, setDeleteModal, deleteActivity]} />
         )}
         {editForm && (
           <ActivityEditForm oldCourse={item} setEditForm={setEditForm} />

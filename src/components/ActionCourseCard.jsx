@@ -5,10 +5,13 @@ import { useState } from "react";
 import Modal from "../components/Modal";
 import ConfirmDelete from "./ConfirmDelete";
 import CourseEditForm from "./CourseEditForm";
+import useUserProvider from "../store/useUserProvider";
 
 export default function ActionCourseCard({ course }) {
+  const { deleteCourse } = useUserProvider();
   const [deleteModal, setDeleteModal] = useState(false);
   const [editForm, setEditForm] = useState(false);
+  const path = "courses";
 
   return (
     <div>
@@ -24,7 +27,7 @@ export default function ActionCourseCard({ course }) {
       </button>
       <Modal>
         {deleteModal && (
-          <ConfirmDelete oldCourse={course} setDeleteModal={setDeleteModal} />
+          <ConfirmDelete setup={[course, path, setDeleteModal, deleteCourse]} />
         )}
         {editForm && (
           <CourseEditForm oldCourse={course} setEditForm={setEditForm} />
