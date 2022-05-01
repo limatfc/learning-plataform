@@ -2,10 +2,11 @@ import { Link, useParams } from "react-router-dom";
 import useReadData from "../hooks/useReadData";
 import useUserProvider from "../store/useUserProvider";
 import Loading from "./Loading";
-import SectionCard from "../components/SectionCard";
 import Error from "../pages/Error";
+import ActionSectionCard from "../components/ActionSectionCard";
+import CreateActivityMenu from "../components/CreateActivityMenu";
 
-export default function StudentCourse() {
+export default function TeacherCourse() {
   const { courses, coursesHandler, user } = useUserProvider();
   const { status } = useReadData(coursesHandler, "courses");
   const { course } = useParams();
@@ -16,16 +17,19 @@ export default function StudentCourse() {
   return (
     <div>
       <header>
-        <h2>
-          {user.childName}, welcome to the {find.name} course
-        </h2>
-        <p>{find.description}</p>
+        <h2>eEnglish</h2>
+        <h2>Hi teacher {user.name}, welcome!</h2>
+        <p>
+          Here you can edit, add and delete the activities materials for your{" "}
+          {find.name} course.
+        </p>
       </header>
+      <CreateActivityMenu />
       <div>
         <h2> {find.name} fun activities</h2>
-        <SectionCard find={find} />
+        <ActionSectionCard find={find} />
       </div>
-      <Link to="/student-dashboard">Go back</Link>
+      <Link to="/teacher-dashboard">Go back</Link>
     </div>
   );
 }

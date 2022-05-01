@@ -1,19 +1,22 @@
 import { useState } from "react";
+import { deleteFile } from "../scripts/firebase/cloudStorage";
 import { deleteDocument } from "../scripts/firebase/fireStore";
-import useUserProvider from "../store/useUserProvider";
 import CompleteMessage from "./CompleteMessage";
 
-export default function ConfirmDelete({ oldCourse, setDeleteModal }) {
+export default function ConfirmDelete({ setup }) {
+  const [item, path, setter, stateUpdatter] = setup;
   const [status, setStatus] = useState(null);
-  const { deleteCourse } = useUserProvider();
 
   async function onDelete() {
     setStatus(0);
-    const result = await deleteDocument("courses", oldCourse.id);
+    const result = await deleteDocument(path, item.id);
 
     if (result === "") {
-      deleteCourse(oldCourse.id);
+      stateUpdatter(item.id);
       setStatus(1);
+    }
+    if (item.type === "file" || item.type === "image") {
+      deleteFile(`activity/${item.id}.png`);
     }
   }
 
@@ -21,15 +24,13 @@ export default function ConfirmDelete({ oldCourse, setDeleteModal }) {
   status === 0 ? (label = "Loading") : (label = "Yes, I am sure");
 
   if (status === 1)
-    return (
-      <CompleteMessage message={"deleted"} setShowModal={setDeleteModal} />
-    );
+    return <CompleteMessage message={"deleted"} setShowModal={setter} />;
 
   return (
     <div className="overlayer">
-      <h2>Are you sure you want to delete the {oldCourse.name} course?</h2>
+      <h2>Are you sure you want to delete the {item.name} item?</h2>
       <button onClick={onDelete}>{label}</button>
-      <button onClick={() => setDeleteModal(false)}>Cancel</button>
+      <button onClick={() => setter(false)}>Cancel</button>
     </div>
   );
 }
