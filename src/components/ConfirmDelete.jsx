@@ -10,7 +10,7 @@ export default function ConfirmDelete({ setup }) {
   async function onDelete() {
     setStatus(0);
     const result = await deleteDocument(path, item.id);
-
+    setStatus(2);
     if (result === "") {
       stateUpdatter(item.id);
       setStatus(1);

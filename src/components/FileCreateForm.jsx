@@ -34,14 +34,17 @@ export default function FileCreateForm({ id, type, action }) {
     setStatus(0);
     const inputedData1 = { name, section, type, url };
     const result = await addDocumentWithNoId(path, inputedData1);
+    setStatus(2);
     if (result.data === "") {
       const filePath = `activity/${result.id}.png`;
       url = await uploadFile(file, filePath);
     }
-    const inputedData2 = { name, section, type, url };
+    const inputedData2 = { name, section, type, url, id: result.id };
+    setStatus(2);
     if (url) {
       withUrl = await editDocument(path, result.id, inputedData2);
     }
+    setStatus(2);
     if (withUrl === "") {
       setStatus(1);
       addActivity(inputedData2);
@@ -54,8 +57,9 @@ export default function FileCreateForm({ id, type, action }) {
   return (
     <div className="overlayer">
       <form onSubmit={onCreate}>
+        <h3>To add a new {type}, please enter the information bellow</h3>
         <InputField setup={info.name} actions={[setName, check]} />
-        <FileInput setter={setFile} />
+        <FileInput setter={setFile} label={type} />
         <select onChange={(event) => setSection(event.target.value)}>
           {options}
         </select>
