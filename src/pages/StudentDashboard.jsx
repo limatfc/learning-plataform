@@ -1,4 +1,4 @@
-import CourseCard from "../components/CourseCard";
+import CourseCard from "../components/signedInStudent/CourseCard";
 import useReadData from "../hooks/useReadData";
 import useUserProvider from "../store/useUserProvider";
 import Loading from "./Loading";

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import "../styles/components/ConfirmationMessage.css";
+import "../../styles/components/ConfirmSignedOut.css";
 
-export default function ConfirmationMessage({ message, link }) {
+export default function ConfirmSignedOut({ message, link }) {
   return (
     <div className="overlayer">
       <h1>{message}</h1>

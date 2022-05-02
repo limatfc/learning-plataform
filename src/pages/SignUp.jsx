@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Modal from "../components/Modal";
-import ConfirmationMessage from "../components/ConfirmationMessage";
-import SignUpForm from "../components/SignUpForm";
+import ConfirmSignedOut from "../components/signedOut/ConfirmSignedOut";
+import SignUpForm from "../components/signedOut/SignUpForm";
 
 export default function SignUp() {
   const [status, setStatus] = useState(null);
@@ -21,7 +21,7 @@ export default function SignUp() {
       <Link to="/login">Login</Link>
       {status === 1 && (
         <Modal>
-          <ConfirmationMessage message={success} link="/login" />
+          <ConfirmSignedOut message={success} link="/login" />
         </Modal>
       )}
     </div>

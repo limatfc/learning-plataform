@@ -1,5 +1,5 @@
-import image01 from "../assets/images/landing-01.png";
-import image02 from "../assets/images/landing-02.png";
+import image01 from "../../assets/images/landing-01.png";
+import image02 from "../../assets/images/landing-02.png";
 
 export default function LandingHero() {
   return (
