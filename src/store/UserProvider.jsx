@@ -5,7 +5,6 @@ import {
 } from "../scripts/localStorage/localStorage";
 import { readDocument } from "../scripts/firebase/fireStore";
 import userContext from "./user-context";
-
 const localStorageKey = "userUID";
 
 export default function UserProvider({ children }) {
@@ -57,8 +56,8 @@ export default function UserProvider({ children }) {
   function editCourse(id, inputedData) {
     const copyCourses = [...courses];
     const findIndex = copyCourses.findIndex((item) => item.id === id);
+    console.log("id", id);
     copyCourses.splice(findIndex, 1, inputedData);
-    console.log(copyCourses);
     setCourses(copyCourses);
   }
 
@@ -79,6 +78,14 @@ export default function UserProvider({ children }) {
   function addActivity(inputedData) {
     const copyActivity = [...activities];
     copyActivity.push(inputedData);
+    setActivities(copyActivity);
+  }
+
+  function editActivity(id, inputedData) {
+    const copyActivity = [...activities];
+    const findIndex = copyActivity.findIndex((item) => item.id === id);
+
+    copyActivity.splice(findIndex, 1, inputedData);
     setActivities(copyActivity);
   }
 
@@ -104,6 +111,7 @@ export default function UserProvider({ children }) {
     deleteCourse,
     deleteActivity,
     addActivity,
+    editActivity,
   };
 
   return <userContext.Provider value={value}>{children}</userContext.Provider>;

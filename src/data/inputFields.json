@@ -135,6 +135,10 @@
         "value": ""
       },
       {
+        "label": "Videos",
+        "value": "Videos"
+      },
+      {
         "label": "Book activity",
         "value": "Books"
       },
@@ -145,10 +149,6 @@
       {
         "label": "Images",
         "value": "Images"
-      },
-      {
-        "label": "Videos",
-        "value": "Videos"
       },
       {
         "label": "Have fun at home",

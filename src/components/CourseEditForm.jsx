@@ -25,12 +25,13 @@ export default function CourseEditForm({ oldCourse, setEditForm }) {
       description,
       imageDescription: imgDescr,
       imageURL,
+      id: oldCourse.id,
     };
+
     setStatus(0);
     const result = await editDocument("courses", oldCourse.id, inputedData);
-
+    setStatus(2);
     if (result === "") {
-      console.log("a");
       setStatus(1);
       editCourse(oldCourse.id, inputedData);
     }
@@ -48,8 +49,8 @@ export default function CourseEditForm({ oldCourse, setEditForm }) {
         <h3>Edit {oldCourse.name} course information</h3>
         <InputField setup={info.name} actions={[setName, check]} />
         <InputField setup={info.descr} actions={[setDescription, check]} />
-        <InputField setup={info.imageURL} actions={[setImgDescr, check]} />
-        <InputField setup={info.imgDescr} actions={[setImgURL, check]} />
+        <InputField setup={info.imageURL} actions={[setImgURL, check]} />
+        <InputField setup={info.imgDescr} actions={[setImgDescr, check]} />
         <button type="submit">{label}</button>
         <button type="button" onClick={() => setEditForm(false)}>
           Cancel

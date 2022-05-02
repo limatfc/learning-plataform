@@ -8,10 +8,12 @@ import {
 import onFailure from "../logic/onFailure";
 
 export async function uploadFile(file, fileName) {
+  let data = null;
   try {
     const fileReference = ref(cloudStorage, fileName);
     await uploadBytes(fileReference, file);
-    return await getDownloadURL(fileReference);
+    data = await getDownloadURL(fileReference);
+    return data;
   } catch (error) {
     onFailure(error);
   }
