@@ -1,4 +1,4 @@
-export default function CompleteMessage({ setShowModal, message }) {
+export default function ConfirmSignedIn({ setShowModal, message }) {
   return (
     <div className="overlayer">
       <p>YAY, course {message} successfully!</p>

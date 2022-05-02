@@ -56,7 +56,6 @@ export default function UserProvider({ children }) {
   function editCourse(id, inputedData) {
     const copyCourses = [...courses];
     const findIndex = copyCourses.findIndex((item) => item.id === id);
-    console.log("id", id);
     copyCourses.splice(findIndex, 1, inputedData);
     setCourses(copyCourses);
   }
@@ -84,7 +83,6 @@ export default function UserProvider({ children }) {
   function editActivity(id, inputedData) {
     const copyActivity = [...activities];
     const findIndex = copyActivity.findIndex((item) => item.id === id);
-
     copyActivity.splice(findIndex, 1, inputedData);
     setActivities(copyActivity);
   }

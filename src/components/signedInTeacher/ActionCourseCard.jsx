@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import garbage from "../assets/icons/garbage.png";
-import edit from "../assets/icons/edit.png";
 import { useState } from "react";
-import Modal from "../components/Modal";
+import useUserProvider from "../../store/useUserProvider";
 import ConfirmDelete from "./ConfirmDelete";
 import CourseEditForm from "./CourseEditForm";
-import useUserProvider from "../store/useUserProvider";
+import Modal from "../Modal";
+import garbage from "../../assets/icons/garbage.png";
+import edit from "../../assets/icons/edit.png";
 
 export default function ActionCourseCard({ course }) {
   const { deleteCourse } = useUserProvider();

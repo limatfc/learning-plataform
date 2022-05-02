@@ -1,9 +1,9 @@
-import InputField from "./InputField";
-import data from "../data/inputFields.json";
+import InputField from "../InputField";
+import data from "../../data/inputFields.json";
 import { useState } from "react";
-import { addDocumentWithNoId } from "../scripts/firebase/fireStore";
-import useUserProvider from "../store/useUserProvider";
-import CompleteMessage from "./CompleteMessage";
+import { addDocumentWithNoId } from "../../scripts/firebase/fireStore";
+import useUserProvider from "../../store/useUserProvider";
+import ConfirmSignedIn from "./ConfirmSignedIn";
 
 export default function LinkCreateForm({ id, type, action }) {
   const { addActivity } = useUserProvider();
@@ -36,7 +36,7 @@ export default function LinkCreateForm({ id, type, action }) {
   }
 
   if (status === 1)
-    return <CompleteMessage message={"created"} setShowModal={action} />;
+    return <ConfirmSignedIn message={"created"} setShowModal={action} />;
 
   return (
     <div className="overlayer">

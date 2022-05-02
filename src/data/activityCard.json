@@ -1,31 +1,31 @@
 [
   {
     "sectionTitle": "Videos",
-    "sectionDbName": "Videos",
+    "dbName": "Videos",
     "icon": "video.png",
     "id": 1
   },
   {
     "sectionTitle": "Book activities",
-    "sectionDbName": "Books",
+    "dbName": "Books",
     "icon": "book.png",
     "id": 2
   },
   {
     "sectionTitle": "Games",
-    "sectionDbName": "Games",
+    "dbName": "Games",
     "icon": "game.png",
     "id": 3
   },
   {
     "sectionTitle": "Images",
-    "sectionDbName": "Images",
+    "dbName": "Images",
     "icon": "image.png",
     "id": 4
   },
   {
     "sectionTitle": "Have fun at home",
-    "sectionDbName": "Home",
+    "dbName": "Home",
     "icon": "home.png",
     "id": 5
   }

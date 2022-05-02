@@ -1,9 +1,10 @@
 import { useState } from "react";
-import Modal from "./Modal";
+import Modal from "../Modal";
 import FileCreateForm from "./FileCreateForm";
 import LinkCreateForm from "./LinkCreateForm";
 import { useParams } from "react-router-dom";
-import useUserProvider from "../store/useUserProvider";
+import useUserProvider from "../../store/useUserProvider";
+import CreateButtons from "./CreateButtons";
 
 export default function CreateActivityMenu() {
   const { course } = useParams();
@@ -32,18 +33,7 @@ export default function CreateActivityMenu() {
   }
   return (
     <div>
-      <button onClick={onOpenFileForm} value="file">
-        Create a file
-      </button>
-      <button onClick={onOpenLinkForm} value="video">
-        Create a video
-      </button>
-      <button onClick={onOpenFileForm} value="image">
-        Create an image
-      </button>
-      <button onClick={onOpenLinkForm} value="game">
-        Create a game
-      </button>
+      <CreateButtons actions={{ onOpenFileForm, onOpenLinkForm }} />
       <Modal>
         {fileForm && (
           <FileCreateForm id={find.id} type={type} action={onCloseFileForm} />
