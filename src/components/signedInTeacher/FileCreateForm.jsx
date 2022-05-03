@@ -1,13 +1,13 @@
-import InputField from "../InputField";
-import data from "../../data/inputFields.json";
 import { useState } from "react";
 import { editDocument } from "../../scripts/firebase/fireStore";
 import { addDocumentWithNoId } from "../../scripts/firebase/fireStore";
+import { urlComesFromAFileUpload } from "../../scripts/logic/ActivityEditActions";
 import useUserProvider from "../../store/useUserProvider";
 import ConfirmSignedIn from "./ConfirmSignedIn";
 import FileInput from "../FileInput";
-import { uploadFile } from "../../scripts/firebase/cloudStorage";
+import InputField from "../InputField";
 import Select from "./Select";
+import data from "../../data/inputFields.json";
 
 export default function FileCreateForm({ id, type, action }) {
   const { addActivity } = useUserProvider();
@@ -28,14 +28,9 @@ export default function FileCreateForm({ id, type, action }) {
     setStatus(0);
     const inputedData1 = { name, section, type, url };
     const result = await addDocumentWithNoId(path, inputedData1);
-    if (result.data === "") {
-      const filePath = `activity/${result.id}.png`;
-      url = await uploadFile(file, filePath);
-    }
+    if (result.data === "") url = await urlComesFromAFileUpload(file, result);
     const inputedData2 = { name, section, type, url, id: result.id };
-    if (url) {
-      withUrl = await editDocument(path, result.id, inputedData2);
-    }
+    if (url) withUrl = await editDocument(path, result.id, inputedData2);
     setStatus(2);
     if (withUrl === "") {
       setStatus(1);
