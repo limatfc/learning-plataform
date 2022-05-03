@@ -87,6 +87,14 @@ export default function UserProvider({ children }) {
     setActivities(copyActivity);
   }
 
+  function enrollStudent(studentDetails, courseId) {
+    const copyCourses = [...courses];
+    const find = copyCourses.find((item) => item.id === courseId);
+    find.students.push(studentDetails);
+    setCourses(copyCourses);
+    return find;
+  }
+
   const coursesHandler = useCallback((courses) => {
     setCourses(courses);
   }, []);
@@ -110,6 +118,7 @@ export default function UserProvider({ children }) {
     deleteActivity,
     addActivity,
     editActivity,
+    enrollStudent,
   };
 
   return <userContext.Provider value={value}>{children}</userContext.Provider>;

@@ -25,6 +25,7 @@ export default function Login() {
     const uid = await loginUser(email, password);
     setStatus(2);
     if (uid) user = await readDoc(uidHandler, uid, setStatus);
+    user.id = uid;
     if (user) await saveUser(userHandler, user, navigate);
   }
 
