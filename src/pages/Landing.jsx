@@ -1,8 +1,8 @@
-import LandingHero from "../components/LandingHero";
+import LandingHero from "../components/signedOut/LandingHero";
+import LandingCourses from "../components/signedOut/LandingCourses";
+import LandingFindUs from "../components/signedOut/LandingFindUs";
 import courseData from "../data/landing.json";
 import image06 from "../assets/images/landing-06.png";
-import LandingCourses from "../components/LandingCourses";
-import LandingFindUs from "../components/LandingFindUs";
 
 export default function Landing() {
   const coursesInfo = courseData.courses.map((item) => (

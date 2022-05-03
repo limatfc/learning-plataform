@@ -1,11 +1,11 @@
+import { useState } from "react";
 import useReadData from "../hooks/useReadData";
 import useUserProvider from "../store/useUserProvider";
 import Loading from "./Loading";
-import ActionCourseCard from "../components/ActionCourseCard";
 import Error from "../pages/Error";
-import { useState } from "react";
 import Modal from "../components/Modal";
-import CourseCreateForm from "../components/CourseCreateForm";
+import ActionCourseCard from "../components/signedInTeacher/ActionCourseCard";
+import CourseCreateForm from "../components/signedInTeacher/CourseCreateForm";
 
 export default function TeacherDashboard() {
   const [showModal, setShowModal] = useState(false);

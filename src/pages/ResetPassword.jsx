@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import ConfirmationMessage from "../components/ConfirmationMessage";
+import ConfirmSignedOut from "../components/signedOut/ConfirmSignedOut";
 import InputField from "../components/InputField";
 import Modal from "../components/Modal";
 import inputData from "../data/inputFields.json";
@@ -40,7 +40,7 @@ export default function ResetPassword() {
       <Link to="/sign-up">Create account</Link>
       {status === 1 && (
         <Modal>
-          <ConfirmationMessage message={confirmationMessage} link="/login" />
+          <ConfirmSignedOut message={confirmationMessage} link="/login" />
         </Modal>
       )}
     </div>

@@ -1,8 +1,8 @@
 import ActionActivityCard from "./ActionActivityCard";
-import useReadData from "../hooks/useReadData";
-import useUserProvider from "../store/useUserProvider";
-import Error from "../pages/Error";
-import data from "../data/activityCard.json";
+import useReadData from "../../hooks/useReadData";
+import useUserProvider from "../../store/useUserProvider";
+import Error from "../../pages/Error";
+import data from "../../data/activityCard.json";
 
 export default function ActionSectionCard({ find }) {
   const { activitiesHandler, activities } = useUserProvider();
@@ -18,12 +18,9 @@ export default function ActionSectionCard({ find }) {
     <div>
       {data.map((item) => (
         <div key={item.id}>
-          <img src={require(`../assets/icons/${item.icon}`)} alt="an icon" />
+          <img src={require(`../../assets/icons/${item.icon}`)} alt="an icon" />
           <h3>{item.sectionTitle}</h3>
-          <ActionActivityCard
-            activities={activities}
-            sectionDbName={item.sectionDbName}
-          />
+          <ActionActivityCard activities={activities} dbName={item.dbName} />
         </div>
       ))}
     </div>

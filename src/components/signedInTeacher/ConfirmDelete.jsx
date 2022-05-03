@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { deleteFile } from "../scripts/firebase/cloudStorage";
-import { deleteDocument } from "../scripts/firebase/fireStore";
-import CompleteMessage from "./CompleteMessage";
+import { deleteFile } from "../../scripts/firebase/cloudStorage";
+import { deleteDocument } from "../../scripts/firebase/fireStore";
+import ConfirmSignedIn from "./ConfirmSignedIn";
 
 export default function ConfirmDelete({ setup }) {
   const [item, path, setter, stateUpdatter] = setup;
@@ -24,7 +24,7 @@ export default function ConfirmDelete({ setup }) {
   status === 0 ? (label = "Loading") : (label = "Yes, I am sure");
 
   if (status === 1)
-    return <CompleteMessage message={"deleted"} setShowModal={setter} />;
+    return <ConfirmSignedIn message={"deleted"} setShowModal={setter} />;
 
   return (
     <div className="overlayer">

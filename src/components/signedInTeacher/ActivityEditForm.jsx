@@ -1,10 +1,12 @@
-import FileInput from "./FileInput";
-import InputField from "./InputField";
-import data from "../data/inputFields.json";
 import { useState } from "react";
-import { editDocument } from "../scripts/firebase/fireStore";
-import { uploadFile } from "../scripts/firebase/cloudStorage";
-import CompleteMessage from "./CompleteMessage";
+import { urlComesFromAFileUpload } from "../../scripts/logic/ActivityEditActions";
+import { urlComesFromALink } from "../../scripts/logic/ActivityEditActions";
+import { urlComesFromAFileEdit } from "../../scripts/logic/ActivityEditActions";
+import ConfirmSignedIn from "./ConfirmSignedIn";
+import FileInput from "../FileInput";
+import InputField from "../InputField";
+import Select from "./Select";
+import data from "../../data/inputFields.json";
 
 export default function ActivityEditForm({ setup }) {
   const [item, path, setEditForm, editActivity] = setup;
@@ -17,46 +19,21 @@ export default function ActivityEditForm({ setup }) {
   const info = data.linkCreateForm;
   const filesType = item.type === "file" || item.type === "image";
   const linkType = item.type === "video" || item.type === "game";
-  const options = info.section.map((item) => (
-    <option key={item.value} value={item.value}>
-      {item.label}
-    </option>
-  ));
 
   async function onEdit(event) {
     event.preventDefault();
     let newURL = "";
     setStatus(0);
-    const inputedData = {
-      name,
-      url: inputedUrl,
-      section,
-      type: item.type,
-      id: item.id,
-    };
-    const inputedData1 = {
-      name,
-      url: newURL,
-      section,
-      type: item.type,
-      id: item.id,
-    };
-    if (inputedUrl) {
-      const result = await editDocument(path, item.id, inputedData);
-      if (result === "") {
-        setStatus(1);
-        editActivity(item.id, inputedData);
-      }
-    }
+    const staticData = { name, section, type: item.type, id: item.id };
+    const inputedData = { ...staticData, url: inputedUrl };
+    const data = { path, id: item.id, inputedData, setStatus, editActivity };
+    if (inputedUrl) await urlComesFromALink(data);
     if (!inputedUrl) {
-      const filePath = `activity/${item.id}.png`;
-      newURL = await uploadFile(file, filePath);
+      newURL = await urlComesFromAFileUpload(file, item);
+      const inputedData1 = { ...staticData, url: newURL };
       if (newURL) {
-        const result = await editDocument(path, item.id, inputedData1);
-        if (result === "") {
-          setStatus(1);
-          editActivity(item.id, inputedData1);
-        }
+        const data1 = { path, item, inputedData1, setStatus, editActivity };
+        await urlComesFromAFileEdit(data1);
       }
     }
   }
@@ -65,7 +42,7 @@ export default function ActivityEditForm({ setup }) {
   status === 0 ? (label = "Loading") : (label = "Confirm changes");
 
   if (status === 1)
-    return <CompleteMessage message={"edited"} setShowModal={setEditForm} />;
+    return <ConfirmSignedIn message={"edited"} setShowModal={setEditForm} />;
 
   return (
     <div className="overlayer">
@@ -74,9 +51,7 @@ export default function ActivityEditForm({ setup }) {
         <InputField setup={info.name} actions={[setName, check]} />
         {linkType && <InputField setup={info.url} actions={[setURL, check]} />}
         {filesType && <FileInput setter={setFile} label={item.type} />}
-        <select onChange={(event) => setSection(event.target.value)}>
-          {options}
-        </select>
+        <Select setter={setSection} />
         <button type="submit">{label}</button>
         <button type="button" onClick={() => setEditForm(false)}>
           Cancel

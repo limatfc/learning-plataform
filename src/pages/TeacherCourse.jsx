@@ -3,8 +3,8 @@ import useReadData from "../hooks/useReadData";
 import useUserProvider from "../store/useUserProvider";
 import Loading from "./Loading";
 import Error from "../pages/Error";
-import ActionSectionCard from "../components/ActionSectionCard";
-import CreateActivityMenu from "../components/CreateActivityMenu";
+import ActionSectionCard from "../components/signedInTeacher/ActionSectionCard";
+import CreateActivityMenu from "../components/signedInTeacher/CreateActivityMenu";
 
 export default function TeacherCourse() {
   const { courses, coursesHandler, user } = useUserProvider();

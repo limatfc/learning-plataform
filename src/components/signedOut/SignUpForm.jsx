@@ -1,8 +1,8 @@
 import { useState } from "react";
-import InputField from "../components/InputField";
-import inputData from "../data/inputFields.json";
-import { createUser } from "../scripts/firebase/auth";
-import { addDocument } from "../scripts/firebase/fireStore";
+import InputField from "../InputField";
+import inputData from "../../data/inputFields.json";
+import { createUser } from "../../scripts/firebase/auth";
+import { addDocument } from "../../scripts/firebase/fireStore";
 
 export default function SignUpForm({ actions, label }) {
   const { setStatus } = actions;

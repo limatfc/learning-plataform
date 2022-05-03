@@ -1,10 +1,10 @@
-import InputField from "./InputField";
-import data from "../data/inputFields.json";
 import { useState } from "react";
-import { addDocumentWithNoId } from "../scripts/firebase/fireStore";
-import { editName } from "../scripts/logic/editName";
-import useUserProvider from "../store/useUserProvider";
-import CompleteMessage from "./CompleteMessage";
+import { addDocumentWithNoId } from "../../scripts/firebase/fireStore";
+import { editName } from "../../scripts/logic/editName";
+import useUserProvider from "../../store/useUserProvider";
+import ConfirmSignedIn from "./ConfirmSignedIn";
+import InputField from "../InputField";
+import data from "../../data/inputFields.json";
 
 export default function CourseCreateForm({ setShowModal }) {
   const { addCourse } = useUserProvider();
@@ -29,9 +29,10 @@ export default function CourseCreateForm({ setShowModal }) {
       ...mainData,
       ...extraData,
     });
+    setStatus(2);
     if (result.data === "") {
       setStatus(1);
-      addCourse({ ...mainData, ...extraData });
+      addCourse({ ...mainData, ...extraData, id: result.id });
     }
   }
 
@@ -39,7 +40,7 @@ export default function CourseCreateForm({ setShowModal }) {
   status === 0 ? (label = "Loading") : (label = "Create new course");
 
   if (status === 1)
-    return <CompleteMessage message={"created"} setShowModal={setShowModal} />;
+    return <ConfirmSignedIn message={"created"} setShowModal={setShowModal} />;
 
   return (
     <div className="overlayer">

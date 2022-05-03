@@ -1,9 +1,10 @@
-import InputField from "./InputField";
-import data from "../data/inputFields.json";
 import { useState } from "react";
-import { addDocumentWithNoId } from "../scripts/firebase/fireStore";
-import useUserProvider from "../store/useUserProvider";
-import CompleteMessage from "./CompleteMessage";
+import { addDocumentWithNoId } from "../../scripts/firebase/fireStore";
+import useUserProvider from "../../store/useUserProvider";
+import ConfirmSignedIn from "./ConfirmSignedIn";
+import InputField from "../InputField";
+import Select from "./Select";
+import data from "../../data/inputFields.json";
 
 export default function LinkCreateForm({ id, type, action }) {
   const { addActivity } = useUserProvider();
@@ -15,11 +16,6 @@ export default function LinkCreateForm({ id, type, action }) {
   const info = data.linkCreateForm;
   const path = `courses/${id}/content`;
   let label = status === 0 ? "Loading" : "Create new activity";
-  const options = info.section.map((item) => (
-    <option key={item.value} value={item.value}>
-      {item.label}
-    </option>
-  ));
 
   async function onCreate(event) {
     event.preventDefault();
@@ -36,7 +32,7 @@ export default function LinkCreateForm({ id, type, action }) {
   }
 
   if (status === 1)
-    return <CompleteMessage message={"created"} setShowModal={action} />;
+    return <ConfirmSignedIn message={"created"} setShowModal={action} />;
 
   return (
     <div className="overlayer">
@@ -44,9 +40,7 @@ export default function LinkCreateForm({ id, type, action }) {
         <h3>To add a new {type}, please enter the information bellow</h3>
         <InputField setup={info.name} actions={[setName, check]} />
         <InputField setup={info.url} actions={[setURL, check]} />
-        <select onChange={(event) => setSection(event.target.value)}>
-          {options}
-        </select>
+        <Select setter={setSection} />
         <button type="submit">{label}</button>
         <button type="button" onClick={action}>
           Cancel

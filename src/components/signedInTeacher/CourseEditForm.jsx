@@ -1,9 +1,9 @@
 import { useState } from "react";
-import InputField from "../components/InputField";
-import data from "../data/inputFields.json";
-import { editDocument } from "../scripts/firebase/fireStore";
-import CompleteMessage from "./CompleteMessage";
-import useUserProvider from "../store/useUserProvider";
+import InputField from "../InputField";
+import data from "../../data/inputFields.json";
+import { editDocument } from "../../scripts/firebase/fireStore";
+import ConfirmSignedIn from "./ConfirmSignedIn";
+import useUserProvider from "../../store/useUserProvider";
 
 export default function CourseEditForm({ oldCourse, setEditForm }) {
   const { editCourse } = useUserProvider();
@@ -20,14 +20,9 @@ export default function CourseEditForm({ oldCourse, setEditForm }) {
   async function onEdit(event) {
     event.preventDefault();
     if (checkEmpty) return null;
-    const inputedData = {
-      name,
-      description,
-      imageDescription: imgDescr,
-      imageURL,
-      id: oldCourse.id,
-    };
-
+    const mainData = { name, description, imageURL };
+    const extraData = { imageDescription: imgDescr, id: oldCourse.id };
+    const inputedData = { ...mainData, ...extraData };
     setStatus(0);
     const result = await editDocument("courses", oldCourse.id, inputedData);
     setStatus(2);
@@ -41,7 +36,7 @@ export default function CourseEditForm({ oldCourse, setEditForm }) {
   status === 0 ? (label = "Loading") : (label = "Confirm changes");
 
   if (status === 1)
-    return <CompleteMessage message={"edited"} setShowModal={setEditForm} />;
+    return <ConfirmSignedIn message={"edited"} setShowModal={setEditForm} />;
 
   return (
     <div className="overlayer">

@@ -1,13 +1,13 @@
 import { useState } from "react";
-import Modal from "./Modal";
+import Modal from "../Modal";
 import ConfirmDelete from "./ConfirmDelete";
-import control from "../assets/icons/control.png";
-import file from "../assets/icons/file.png";
-import camera from "../assets/icons/camera.png";
-import play from "../assets/icons/play.png";
-import garbage from "../assets/icons/garbage.png";
-import edit from "../assets/icons/edit.png";
-import useUserProvider from "../store/useUserProvider";
+import control from "../../assets/icons/control.png";
+import file from "../../assets/icons/file.png";
+import camera from "../../assets/icons/camera.png";
+import play from "../../assets/icons/play.png";
+import garbage from "../../assets/icons/garbage.png";
+import edit from "../../assets/icons/edit.png";
+import useUserProvider from "../../store/useUserProvider";
 import ActivityEditForm from "./ActivityEditForm";
 
 export default function ActionActivityItem({ item, courseId }) {

@@ -2,7 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import useReadData from "../hooks/useReadData";
 import useUserProvider from "../store/useUserProvider";
 import Loading from "./Loading";
-import SectionCard from "../components/SectionCard";
+import SectionCard from "../components/signedInStudent/SectionCard";
 import Error from "../pages/Error";
 
 export default function StudentCourse() {
