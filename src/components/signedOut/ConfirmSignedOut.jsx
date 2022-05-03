@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import "../../styles/components/ConfirmSignedOut.css";
 
 export default function ConfirmSignedOut({ message, link }) {
   return (

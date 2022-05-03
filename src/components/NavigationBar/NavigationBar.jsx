@@ -1,4 +1,4 @@
-import useUserProvider from "../store/useUserProvider";
+import useUserProvider from "../../store/useUserProvider";
 import NavBarMobileLogOut from "./NavBarMobileLogOut";
 import NavBarDesktopLogIn from "./NavBarDesktopLogIn";
 

@@ -1,10 +1,12 @@
 import image01 from "../../assets/images/landing-01.png";
 import image02 from "../../assets/images/landing-02.png";
+import separator from "../../assets/icons/separator.png";
 
 export default function LandingHero() {
   return (
-    <section>
+    <section className="landing-hero">
       <img
+        className="hero"
         src={image01}
         alt="an usual form colored with a gradient from green to orange, with an atom, a ruler, 2 books, a lamp, a hand and an Erlenmeyer"
       />
@@ -20,9 +22,11 @@ export default function LandingHero() {
         speak English!
       </h3>
       <img
+        className="trophy"
         src={image02}
         alt="a boy sorrounded by trophies, in a green background"
       />
+      <img className="separator" src={separator} alt="three dots in sequence" />
     </section>
   );
 }

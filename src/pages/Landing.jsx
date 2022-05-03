@@ -14,13 +14,13 @@ export default function Landing() {
   ));
 
   return (
-    <div>
+    <div className="landing">
       <LandingHero />
-      <section>
+      <section className="landing-courses-wrapper">
         <h2>Courses</h2>
         {coursesInfo}
       </section>
-      <section>
+      <section className="landing-prices">
         <h2>Prices</h2>
         <img src={image06} alt="a card machine in an orange background" />
         <h3>
@@ -29,7 +29,7 @@ export default function Landing() {
           you with your needs.
         </h3>
       </section>
-      <section>
+      <section className="landing-findus">
         <h2>Find us</h2>
         {findUsInfo}
       </section>
