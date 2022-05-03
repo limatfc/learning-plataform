@@ -1,6 +1,6 @@
 export default function LandingCourses({ item }) {
   return (
-    <div>
+    <div className="landing-courses">
       <img
         src={require(`../../assets/images/${item.imageURL}`)}
         alt={item.imageDescription}

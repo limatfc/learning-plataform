@@ -1,2 +1,13 @@
 @import "./base/typography.css";
 @import "./base/layout.css";
+
+/* global */
+@import "./global/Modal.css";
+@import "./global/Separator.css";
+
+/* pages */
+@import "./pages/Landing.css";
+
+/* components */
+@import "./components/LandingCourses";
+@import "./components/LandingHero";
