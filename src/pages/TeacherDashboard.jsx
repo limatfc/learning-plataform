@@ -6,6 +6,7 @@ import Error from "../pages/Error";
 import Modal from "../components/Modal";
 import ActionCourseCard from "../components/signedInTeacher/ActionCourseCard";
 import CourseCreateForm from "../components/signedInTeacher/CourseCreateForm";
+import EnrolledStudentsCards from "../components/signedInTeacher/EnrolledStudentsCard";
 
 export default function TeacherDashboard() {
   const [showModal, setShowModal] = useState(false);
@@ -13,6 +14,10 @@ export default function TeacherDashboard() {
   const { status } = useReadData(coursesHandler, "courses");
   const courseCards = courses.map((course) => (
     <ActionCourseCard key={course.id} course={course} />
+  ));
+
+  const enrolledStudentsCards = courses.map((course) => (
+    <EnrolledStudentsCards course={course} key={course.id} />
   ));
 
   if (status === 0) return <Loading />;
@@ -24,6 +29,8 @@ export default function TeacherDashboard() {
       <h3>My courses</h3>
       <button onClick={() => setShowModal(true)}>Create a new course</button>
       <div>{courseCards}</div>
+      <h3>My students</h3>
+      <div>{enrolledStudentsCards}</div>
       <Modal>
         {showModal && <CourseCreateForm setShowModal={setShowModal} />}
       </Modal>

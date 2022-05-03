@@ -16,7 +16,7 @@ export default function StudentDashboard() {
   return (
     <div>
       <h2>eEnglish</h2>
-      <h2>Welcome {user.name}</h2>
+      <h2>Welcome {user.childName}</h2>
       <h3>My courses</h3>
       <div>{courseCards}</div>
     </div>
