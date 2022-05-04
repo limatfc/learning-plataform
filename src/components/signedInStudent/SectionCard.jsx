@@ -15,9 +15,11 @@ export default function SectionCard({ find }) {
   if (status === 2) return <Error setup="" />;
 
   const sections = data.map((item) => (
-    <div key={item.icon}>
-      <img src={require(`../../assets/icons/${item.icon}`)} alt="an icon" />
-      <h3>{item.sectionTitle}</h3>
+    <div className="section-card" key={item.icon}>
+      <h3>
+        <img src={require(`../../assets/icons/${item.icon}`)} alt="an icon" />
+        {item.sectionTitle}
+      </h3>
       <ActivityCard activities={activities} dbName={item.dbName} />
     </div>
   ));

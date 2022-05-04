@@ -11,7 +11,7 @@ export default function ActivityItem({ item }) {
   if (item.type === "game") imageSrc = control;
 
   return (
-    <div>
+    <div className="activity-item">
       <a href={item.url} rel="noreferrer" target="_blank">
         <img src={imageSrc} alt="an icon" />
         {item.name}
