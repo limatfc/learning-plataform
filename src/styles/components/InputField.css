@@ -1,0 +1,22 @@
+.input-field label {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-field small {
+  color: #640000;
+}
+
+.input-field small::after {
+  content: ".";
+  visibility: hidden;
+}
+
+.input-field input {
+  width: 320px;
+  height: 50px;
+  font-size: 20px;
+  border-color: #b1bd8e;
+  border-style: solid;
+  border-radius: 5px;
+}

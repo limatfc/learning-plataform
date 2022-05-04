@@ -1,0 +1,34 @@
+.login {
+  padding: 16px;
+}
+
+.login h2 {
+  padding-bottom: 24px;
+  text-align: center;
+}
+
+.login h3 {
+  padding-bottom: 16px;
+  text-align: center;
+}
+
+.login form {
+  padding-bottom: 24px;
+}
+
+.login p {
+  text-align: center;
+}
+
+.login .secundary {
+  text-decoration: none;
+  color: black;
+}
+
+.login .primary {
+  margin-bottom: 16px;
+}
+
+.login .last {
+  padding-top: 24px;
+}

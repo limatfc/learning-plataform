@@ -1,5 +1,6 @@
 export function editName(name) {
   const lowLetters = name.toLowerCase();
-  const withHifen = lowLetters.replace(/ /g, "-");
+  const trim = lowLetters.trim();
+  const withHifen = trim.replace(/ /g, "-");
   return withHifen;
 }

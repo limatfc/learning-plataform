@@ -1,3 +1,14 @@
-.landing-prices img {
-  width: 100%;
+.landing-courses-wrapper,
+.landing-prices,
+.landing-findus {
+  margin: 16px;
+}
+
+.prices {
+  display: block;
+  width: 90%;
+  margin: 8px auto;
+}
+.landing-prices h3 {
+  padding-bottom: 16px;
 }

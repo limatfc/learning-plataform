@@ -24,7 +24,7 @@ export default function ResetPassword() {
 
   let label = status === 0 ? "Loading" : "Reset password";
   return (
-    <div>
+    <div className="reset-password">
       <h2>Having problems with your password?</h2>
       <h3>
         To redefine your password, please type in all the information required
@@ -32,12 +32,16 @@ export default function ResetPassword() {
       </h3>
       <form onSubmit={onRecover}>
         <InputField setup={info.email} actions={[setEmail, checkEmail]} />
-        <button>{label}</button>
+        <button className="label primary">{label}</button>
       </form>
       <p>Remembered your password?</p>
-      <Link to="/login">Login</Link>
-      <p>Don't have an account yet?</p>
-      <Link to="/sign-up">Create account</Link>
+      <Link className="secundary label" to="/login">
+        Login
+      </Link>
+      <p className="last">Don't have an account yet?</p>
+      <Link className="secundary label" to="/sign-up">
+        Create account
+      </Link>
       {status === 1 && (
         <Modal>
           <ConfirmSignedOut message={confirmationMessage} link="/login" />

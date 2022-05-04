@@ -1,8 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import {
-  setLocalStorage,
-  getLocalStorage,
-} from "../scripts/localStorage/localStorage";
+import { getLocalStorage } from "../scripts/localStorage/localStorage";
 import { readDocument } from "../scripts/firebase/fireStore";
 import userContext from "./user-context";
 const localStorageKey = "userUID";
@@ -12,12 +9,6 @@ export default function UserProvider({ children }) {
   const [user, setUser] = useState();
   const [courses, setCourses] = useState([]);
   const [activities, setActivities] = useState([]);
-
-  useEffect(() => {
-    if (uid) {
-      setLocalStorage(localStorageKey, uid);
-    }
-  }, [uid]);
 
   useEffect(() => {
     async function onFirstLoad() {

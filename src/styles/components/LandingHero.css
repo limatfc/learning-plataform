@@ -5,7 +5,9 @@
 }
 
 .trophy {
-  width: 100%;
+  display: block;
+  width: 90%;
+  margin: 16px;
 }
 
 .landing-hero h1 {
@@ -19,4 +21,13 @@
 .landing-hero h2,
 .landing-hero h3 {
   text-align: center;
+  margin: 0 16px;
+}
+
+.landing-hero h2 {
+  padding-top: 48px;
+}
+
+.landing-hero h3 {
+  padding-top: 8px;
 }

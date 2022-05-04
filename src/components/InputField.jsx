@@ -12,9 +12,9 @@ export default function InputField({ setup, actions }) {
   }
 
   return (
-    <div>
-      <label>
-        {label}
+    <div className="input-field">
+      <label className="label">
+        {label}:
         <input
           type={type}
           placeholder={placeholder}

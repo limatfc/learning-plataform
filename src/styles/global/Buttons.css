@@ -1,0 +1,21 @@
+.primary {
+  height: 50px;
+  width: 300px;
+  background-color: #f8a163;
+  display: block;
+  margin: 0 auto;
+  border-radius: 5px;
+  border: none;
+}
+
+.secundary {
+  height: 50px;
+  width: 250px;
+  background-color: #b1bd8e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  border-radius: 5px;
+  border: none;
+}
