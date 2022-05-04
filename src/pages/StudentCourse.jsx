@@ -6,7 +6,7 @@ import SectionCard from "../components/signedInStudent/SectionCard";
 import Error from "../pages/Error";
 
 export default function StudentCourse() {
-  const { courses, coursesHandler, user } = useUserProvider();
+  const { courses, coursesHandler } = useUserProvider();
   const { status } = useReadData(coursesHandler, "courses");
   const { course } = useParams();
   const find = courses.find((item) => item.nameURL === course);
@@ -16,9 +16,7 @@ export default function StudentCourse() {
   return (
     <div>
       <header>
-        <h2>
-          {user.childName}, welcome to the {find.name} course
-        </h2>
+        <h2>This is the {find.name} course</h2>
         <p>{find.description}</p>
       </header>
       <div>

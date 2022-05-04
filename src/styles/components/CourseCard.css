@@ -1,0 +1,44 @@
+.course-card {
+  width: 150px;
+  margin: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.even {
+  background-color: #b1bd8e;
+}
+
+.odd {
+  background-color: #f8a163;
+}
+
+.even img,
+.odd img {
+  width: 90%;
+  height: 150px;
+  object-fit: cover;
+  padding: 8px;
+}
+
+.course-card .checkbox {
+  align-self: end;
+  justify-self: flex-end;
+  margin-top: auto;
+}
+
+.course-card small {
+  color: #640000;
+  padding: 8px;
+}
+
+.course-card small::after {
+  content: ".";
+  visibility: hidden;
+}
+
+.course-card .link {
+  color: black;
+  text-decoration: none;
+  text-align: center;
+}
