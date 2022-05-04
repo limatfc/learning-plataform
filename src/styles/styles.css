@@ -11,6 +11,7 @@
 @import "./pages/Login.css";
 @import "./pages/ResetPassword.css";
 @import "./pages/SignedUp.css";
+@import "./pages/StudentDashboard.css";
 
 /* components */
 @import "./components/LandingCourses.css";
@@ -18,3 +19,4 @@
 @import "./components/LandingFindUs.css";
 @import "./components/InputField.css";
 @import "./components/LoginForm.css";
+@import "./components/CourseCard.css";

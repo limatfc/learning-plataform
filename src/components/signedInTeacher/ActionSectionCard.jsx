@@ -10,7 +10,7 @@ export default function ActionSectionCard({ find }) {
     activitiesHandler,
     `courses/${find.id}/content/`
   );
-
+  console.log(activities);
   if (status === 0) return null;
   if (status === 2) return <Error setup="" />;
 
