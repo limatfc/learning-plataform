@@ -1,0 +1,28 @@
+.enrolled-students {
+  background-color: #daddd3;
+  margin-bottom: 24px;
+}
+
+.enrolled-students button {
+  width: 350px;
+  display: flex;
+  align-items: center;
+  text-align: start;
+  border: none;
+  border-radius: 5px;
+  background-color: transparent;
+  padding: 8px;
+}
+
+.enrolled-students button img {
+  width: 30px;
+  padding-right: 8px;
+}
+
+.grow {
+  flex-grow: 1;
+}
+
+.enrolled-students button small {
+  padding-right: 8px;
+}

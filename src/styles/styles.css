@@ -13,6 +13,7 @@
 @import "./pages/SignedUp.css";
 @import "./pages/StudentDashboard.css";
 @import "./pages/StudentCourse.css";
+@import "./pages/TeacherDashboard.css";
 
 /* components */
 @import "./components/LandingCourses.css";
@@ -24,3 +25,5 @@
 @import "./components/SectionCard.css";
 @import "./components/ActivityCard.css";
 @import "./components/ActivityItem.css";
+@import "./components/ActionCourseCard.css";
+@import "./components/EnrolledStudentsCard.css";

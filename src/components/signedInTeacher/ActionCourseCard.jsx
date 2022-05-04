@@ -7,22 +7,23 @@ import Modal from "../Modal";
 import garbage from "../../assets/icons/garbage.png";
 import edit from "../../assets/icons/edit.png";
 
-export default function ActionCourseCard({ course }) {
+export default function ActionCourseCard({ course, index }) {
   const { deleteCourse } = useUserProvider();
   const [deleteModal, setDeleteModal] = useState(false);
   const [editForm, setEditForm] = useState(false);
   const path = "courses";
 
   return (
-    <div>
-      <Link to={`/teacher-dashboard/${course.nameURL}`}>
+    <div className="teacher-course-card">
+      <Link className="label" to={`/teacher-dashboard/${course.nameURL}`}>
         <img src={course.imageURL} alt={course.imageDescription} />
         <span>{course.name}</span>
       </Link>
-      <button onClick={() => setDeleteModal(true)}>
+      <p className="teacher-card-description">{course.description}</p>
+      <button className="garbage" onClick={() => setDeleteModal(true)}>
         <img src={garbage} alt="a garbage can icon" />
       </button>
-      <button onClick={() => setEditForm(true)}>
+      <button className="edit" onClick={() => setEditForm(true)}>
         <img src={edit} alt="the edit icon" />
       </button>
       <Modal>
