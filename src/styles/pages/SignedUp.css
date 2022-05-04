@@ -1,0 +1,34 @@
+.signed-up {
+  padding: 16px;
+}
+
+.signed-up h2 {
+  padding-bottom: 24px;
+  text-align: center;
+}
+
+.signed-up h3 {
+  padding-bottom: 16px;
+  text-align: center;
+}
+
+.signed-up .last {
+  padding-top: 24px;
+}
+
+.signed-up form {
+  padding-bottom: 24px;
+}
+
+.signed-up p {
+  text-align: center;
+}
+
+.signed-up .secundary {
+  text-decoration: none;
+  color: black;
+}
+
+.signed-up .primary {
+  margin-bottom: 16px;
+}

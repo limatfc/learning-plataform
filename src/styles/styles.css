@@ -4,10 +4,17 @@
 /* global */
 @import "./global/Modal.css";
 @import "./global/Separator.css";
+@import "./global/Buttons.css";
 
 /* pages */
 @import "./pages/Landing.css";
+@import "./pages/Login.css";
+@import "./pages/ResetPassword.css";
+@import "./pages/SignedUp.css";
 
 /* components */
-@import "./components/LandingCourses";
-@import "./components/LandingHero";
+@import "./components/LandingCourses.css";
+@import "./components/LandingHero.css";
+@import "./components/LandingFindUs.css";
+@import "./components/InputField.css";
+@import "./components/LoginForm.css";
