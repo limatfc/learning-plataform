@@ -5,16 +5,16 @@
   flex-direction: column;
 }
 
-.course-card .even {
+.courseEven {
   background-color: #b1bd8e;
 }
 
-.course-card .odd {
+.courseOdd {
   background-color: #f8a163;
 }
 
-.even img,
-.odd img {
+.courseEven img,
+.courseOdd img {
   width: 90%;
   height: 150px;
   object-fit: cover;
@@ -24,21 +24,20 @@
 .course-card .checkbox {
   align-self: end;
   justify-self: flex-end;
-  margin-top: auto;
-}
-
-.course-card small {
-  color: #640000;
-  padding: 8px;
-}
-
-.course-card small::after {
-  content: ".";
-  visibility: hidden;
+  margin-top: 24px;
 }
 
 .course-card .link {
   color: black;
   text-decoration: none;
   text-align: center;
+}
+
+@media (min-width: 750px) {
+  .course-card {
+    width: 300px;
+    margin: 16px;
+    display: flex;
+    flex-direction: column;
+  }
 }

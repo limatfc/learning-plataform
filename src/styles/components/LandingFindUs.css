@@ -27,3 +27,9 @@
 .find-us-item li {
   padding: 4px 0;
 }
+
+@media (min-width: 750px) {
+  .find-us-item {
+    margin: 24px;
+  }
+}

@@ -6,7 +6,6 @@ import ConfirmDeleteStudent from "./ConfirmDeleteStudent";
 export default function StudentItem({ item, courseId }) {
   const [showDelete, setShowDelete] = useState(false);
 
-  console.log(showDelete);
   return (
     <li className="student-item">
       <span>{item.name}</span>

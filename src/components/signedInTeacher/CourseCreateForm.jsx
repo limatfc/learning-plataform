@@ -55,11 +55,11 @@ export default function CourseCreateForm({ setShowModal }) {
             actions={[setImageURL, emptyCheck]}
           />
           <InputField setup={info.imgDescr} actions={[setImgDescr, check]} />
-          <button className="primary label" type="submit">
+          <button className="primary" type="submit">
             {label}
           </button>
           <button
-            className="secundary label"
+            className="secundary"
             type="button"
             onClick={() => setShowModal(false)}
           >

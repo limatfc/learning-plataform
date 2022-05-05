@@ -33,6 +33,11 @@
   margin-bottom: 16px;
 }
 
+.select {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
 select {
   font-family: "Handlee";
   font-size: 20px;
@@ -43,4 +48,17 @@ select {
   border-style: solid;
   border-radius: 5px;
   margin-bottom: 16px;
+}
+
+@media (min-width: 750px) {
+  .overlayer {
+    width: 800px;
+    padding: 48px;
+  }
+  .overlayer h3 {
+    margin-bottom: 48px;
+  }
+  .overlayer .primary {
+    margin-bottom: 24px;
+  }
 }

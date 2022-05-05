@@ -12,3 +12,34 @@
 .landing-prices h3 {
   padding-bottom: 16px;
 }
+
+@media (min-width: 750px) {
+  .landing h2 {
+    text-align: center;
+    grid-column: 1 / span 2;
+  }
+
+  .landing-prices {
+    display: grid;
+    max-width: 700px;
+    margin: 24px auto 48px auto;
+    align-items: center;
+  }
+  .landing-prices h3 {
+    grid-column-start: 2;
+    grid-row-start: 2;
+    text-align: center;
+    padding-top: 24px;
+  }
+  .prices {
+    grid-column-start: 1;
+    grid-row-start: 2;
+  }
+  .landing-prices .separator {
+    grid-column: 1 / span 2;
+  }
+  .find-us-all {
+    display: flex;
+    justify-content: center;
+  }
+}

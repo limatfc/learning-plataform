@@ -39,7 +39,7 @@ export default function ResetPassword() {
         Login
       </Link>
       <p className="last">Don't have an account yet?</p>
-      <Link className="secundary label" to="/sign-up">
+      <Link className="secundary" to="/sign-up">
         Create account
       </Link>
       {status === 1 && (

@@ -20,3 +20,13 @@
 .odd h3 {
   order: 1;
 }
+
+@media (min-width: 750px) {
+  .landing-courses {
+    max-width: 700px;
+    margin: 24px auto 48px auto;
+  }
+  .landing-courses h3 {
+    align-self: center;
+  }
+}

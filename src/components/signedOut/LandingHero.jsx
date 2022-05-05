@@ -11,13 +11,13 @@ export default function LandingHero() {
         alt="an usual form colored with a gradient from green to orange, with an atom, a ruler, 2 books, a lamp, a hand and an Erlenmeyer"
       />
       <h1>Welcome to eEnglish</h1>
-      <h2>Help your child go one step further in life!</h2>
-      <h3>
+      <h2 className="grid1">Help your child go one step further in life!</h2>
+      <h3 className="grid2">
         It is well known that children that grow up speaking 2 languages develop
         a broader set of skills that other children may struggle with.
       </h3>
-      <h2>That's why we are here!</h2>
-      <h3>
+      <h2 className="grid3">That's why we are here!</h2>
+      <h3 className="grid4">
         We offer several playful courses designed to help you child learn how to
         speak English!
       </h3>
