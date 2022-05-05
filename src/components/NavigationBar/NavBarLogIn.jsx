@@ -8,7 +8,7 @@ import zoom from "../../assets/icons/zoom.png";
 import book from "../../assets/icons/book.png";
 import { useNavigate } from "react-router-dom";
 
-export default function NavBarDesktopLogIn() {
+export default function NavBarLogIn() {
   const navigate = useNavigate();
   const { uidHandler } = useUserProvider();
 

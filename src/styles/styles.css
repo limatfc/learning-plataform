@@ -5,6 +5,8 @@
 @import "./global/Modal.css";
 @import "./global/Separator.css";
 @import "./global/Buttons.css";
+@import "./global/NavBarLogOut.css";
+@import "./global/NavBarLogIn.css";
 
 /* pages */
 @import "./pages/Landing.css";

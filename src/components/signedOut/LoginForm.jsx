@@ -38,11 +38,11 @@ export default function LoginForm() {
     <form className="login-form" onSubmit={onLogin}>
       <InputField setup={info.email} actions={[setEmail, checkEmail]} />
       <InputField setup={info.pass} actions={[setPassword, checkPassword]} />
-      <button className="primary">{label}</button>
       <label className="checkbox">
         <input type="checkbox" onChange={() => setKeepLogin(true)} />
         Keep me connected
       </label>
+      <button className="primary">{label}</button>
     </form>
   );
 }

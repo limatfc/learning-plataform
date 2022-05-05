@@ -1,0 +1,52 @@
+.mobile-logout {
+  height: 70px;
+  margin: 0 16px 16px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 2px -2px gray;
+}
+
+.mobile-logout button {
+  background-color: transparent;
+  border: none;
+  width: 50px;
+}
+
+.mobile-logout .button-primary {
+  width: 75px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8a163;
+  border-radius: 5px;
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+}
+
+.mobile-logout .button-secundary {
+  background-color: #b1bd8e;
+  border-radius: 5px;
+  text-decoration: none;
+  color: black;
+  width: 75px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  font-size: 25px;
+}
+
+@media (min-width: 750px) {
+  .mobile-logout {
+    height: 80px;
+    margin: 0 24px 24px 24px;
+  }
+
+  .mobile-logout .button-secundary {
+    margin-right: 24px;
+  }
+}
