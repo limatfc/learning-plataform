@@ -15,21 +15,24 @@ export default function TeacherCourse() {
   if (status === 0) return <Loading />;
   if (status === 2) return <Error />;
   return (
-    <div>
+    <div className="teacher-course">
       <header>
-        <h2>eEnglish</h2>
-        <h2>Hi teacher {user.name}, welcome!</h2>
-        <p>
-          Here you can edit, add and delete the activities materials for your{" "}
-          {find.name} course.
+        <h2>
+          Welcome to the <em>{find.name}</em> course
+        </h2>
+        <p className="actions-description">
+          Here you can edit, add and delete the activities materials for this
+          course
         </p>
+        <h3>The activities for this course are:</h3>
       </header>
       <CreateActivityMenu />
       <div>
-        <h2> {find.name} fun activities</h2>
         <ActionSectionCard find={find} />
       </div>
-      <Link to="/teacher-dashboard">Go back</Link>
+      <Link className="secundary label" to="/teacher-dashboard">
+        Go back
+      </Link>
     </div>
   );
 }

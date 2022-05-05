@@ -39,18 +39,27 @@ export default function CourseEditForm({ oldCourse, setEditForm }) {
     return <ConfirmSignedIn message={"edited"} setShowModal={setEditForm} />;
 
   return (
-    <div className="overlayer">
-      <form onSubmit={onEdit}>
-        <h3>Edit {oldCourse.name} course information</h3>
-        <InputField setup={info.name} actions={[setName, check]} />
-        <InputField setup={info.descr} actions={[setDescription, check]} />
-        <InputField setup={info.imageURL} actions={[setImgURL, check]} />
-        <InputField setup={info.imgDescr} actions={[setImgDescr, check]} />
-        <button type="submit">{label}</button>
-        <button type="button" onClick={() => setEditForm(false)}>
-          Cancel
-        </button>
-      </form>
+    <div>
+      <div onClick={() => setEditForm(false)} className="backdrop"></div>
+      <div className="overlayer">
+        <form onSubmit={onEdit}>
+          <h3>Edit {oldCourse.name} course information</h3>
+          <InputField setup={info.name} actions={[setName, check]} />
+          <InputField setup={info.descr} actions={[setDescription, check]} />
+          <InputField setup={info.imageURL} actions={[setImgURL, check]} />
+          <InputField setup={info.imgDescr} actions={[setImgDescr, check]} />
+          <button className="label primary" type="submit">
+            {label}
+          </button>
+          <button
+            className="label secundary"
+            type="button"
+            onClick={() => setEditForm(false)}
+          >
+            Cancel
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

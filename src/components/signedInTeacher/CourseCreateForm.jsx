@@ -43,18 +43,30 @@ export default function CourseCreateForm({ setShowModal }) {
     return <ConfirmSignedIn message={"created"} setShowModal={setShowModal} />;
 
   return (
-    <div className="overlayer">
-      <form onSubmit={onCreate}>
-        <h3>To add a new course, please enter the information bellow</h3>
-        <InputField setup={info.name} actions={[setName, check]} />
-        <InputField setup={info.descr} actions={[setDescription, check]} />
-        <InputField setup={info.imageURL} actions={[setImageURL, emptyCheck]} />
-        <InputField setup={info.imgDescr} actions={[setImgDescr, check]} />
-        <button type="submit">{label}</button>
-        <button type="button" onClick={() => setShowModal(false)}>
-          Cancel
-        </button>
-      </form>
+    <div>
+      <div onClick={() => setShowModal(false)} className="backdrop"></div>
+      <div className="overlayer">
+        <form onSubmit={onCreate}>
+          <h3>To add a new course, please enter the information bellow</h3>
+          <InputField setup={info.name} actions={[setName, check]} />
+          <InputField setup={info.descr} actions={[setDescription, check]} />
+          <InputField
+            setup={info.imageURL}
+            actions={[setImageURL, emptyCheck]}
+          />
+          <InputField setup={info.imgDescr} actions={[setImgDescr, check]} />
+          <button className="primary label" type="submit">
+            {label}
+          </button>
+          <button
+            className="secundary label"
+            type="button"
+            onClick={() => setShowModal(false)}
+          >
+            Cancel
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

@@ -14,6 +14,7 @@
 @import "./pages/StudentDashboard.css";
 @import "./pages/StudentCourse.css";
 @import "./pages/TeacherDashboard.css";
+@import "./pages/TeacherCourse.css";
 
 /* components */
 @import "./components/LandingCourses.css";
@@ -27,3 +28,8 @@
 @import "./components/ActivityItem.css";
 @import "./components/ActionCourseCard.css";
 @import "./components/EnrolledStudentsCard.css";
+@import "./components/StudentItem.css";
+@import "./components/CreateButtons.css";
+@import "./components/ActionActivityItem.css";
+@import "./components/CourseCreateForm.css";
+@import "./components/FileInput.css";

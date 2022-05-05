@@ -45,18 +45,29 @@ export default function ActivityEditForm({ setup }) {
     return <ConfirmSignedIn message={"edited"} setShowModal={setEditForm} />;
 
   return (
-    <div className="overlayer">
-      <h3>To add a new {item.type}, please enter the information bellow</h3>
-      <form onSubmit={onEdit}>
-        <InputField setup={info.name} actions={[setName, check]} />
-        {linkType && <InputField setup={info.url} actions={[setURL, check]} />}
-        {filesType && <FileInput setter={setFile} label={item.type} />}
-        <Select setter={setSection} />
-        <button type="submit">{label}</button>
-        <button type="button" onClick={() => setEditForm(false)}>
-          Cancel
-        </button>
-      </form>
+    <div>
+      <div onClick={() => setEditForm(false)} className="backdrop"></div>
+      <div className="overlayer">
+        <h3>To add a new {item.type}, please enter the information bellow</h3>
+        <form onSubmit={onEdit}>
+          <InputField setup={info.name} actions={[setName, check]} />
+          {linkType && (
+            <InputField setup={info.url} actions={[setURL, check]} />
+          )}
+          {filesType && <FileInput setter={setFile} label={item.type} />}
+          <Select setter={setSection} />
+          <button className="primary label" type="submit">
+            {label}
+          </button>
+          <button
+            className="secundary label"
+            type="button"
+            onClick={() => setEditForm(false)}
+          >
+            Cancel
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

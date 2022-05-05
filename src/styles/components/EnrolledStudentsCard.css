@@ -1,6 +1,7 @@
 .enrolled-students {
   background-color: #daddd3;
   margin-bottom: 24px;
+  border-radius: 5px;
 }
 
 .enrolled-students button {
@@ -25,4 +26,11 @@
 
 .enrolled-students button small {
   padding-right: 8px;
+}
+
+.enrolled-students ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
 }

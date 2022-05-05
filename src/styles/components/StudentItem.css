@@ -1,0 +1,14 @@
+.student-item {
+  display: flex;
+  align-items: center;
+  margin: 8px;
+}
+
+.student-item span {
+  width: 80%;
+}
+.student-item button {
+  width: 20%;
+  align-self: end;
+  justify-self: flex-end;
+}
