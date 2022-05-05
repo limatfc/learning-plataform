@@ -11,13 +11,13 @@ export default function ActivityCard({ dbName, activities }) {
   ));
 
   return (
-    <div>
+    <div className="student-activity-card">
       {activity}
       {filteredItems.length === 0 && (
-        <>
+        <div className="empty-message">
           <img src={sad} alt="a sad face" />
           <p>Oh no, looks like you won't have any fun in this section!</p>
-        </>
+        </div>
       )}
     </div>
   );

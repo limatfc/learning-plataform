@@ -1,0 +1,13 @@
+.activity-item {
+  padding: 4px 0;
+}
+
+.activity-item a {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.activity-item a img {
+  padding-right: 8px;
+}

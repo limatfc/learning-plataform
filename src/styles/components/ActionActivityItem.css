@@ -1,0 +1,21 @@
+.action-activity-item {
+  display: flex;
+  align-items: center;
+}
+
+.action-activity-item a img {
+  padding-right: 8px;
+}
+
+.action-activity-item a {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.action-activity-item button {
+  background-color: transparent;
+  border: none;
+  margin: 4px 6px;
+  width: 40px;
+}

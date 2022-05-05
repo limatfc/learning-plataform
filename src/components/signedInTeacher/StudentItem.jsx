@@ -1,33 +1,27 @@
 import garbage from "../../assets/icons/garbage.png";
-import useUserProvider from "../../store/useUserProvider";
-import { editDocument } from "../../scripts/firebase/fireStore";
 import { useState } from "react";
 import Modal from "../Modal";
-import ConfirmSignedIn from "./ConfirmSignedIn";
+import ConfirmDeleteStudent from "./ConfirmDeleteStudent";
 
 export default function StudentItem({ item, courseId }) {
-  const [showModal, setShowModal] = useState(false);
-  const { deleteStudent } = useUserProvider();
+  const [showDelete, setShowDelete] = useState(false);
 
-  async function onDelete() {
-    const newCourse = deleteStudent(item.id, courseId);
-    const result = await editDocument("courses", courseId, newCourse);
-    if (result === "") setShowModal(true);
-  }
+  console.log(showDelete);
   return (
-    <li>
-      {item.name}
-      <button onClick={onDelete}>
+    <li className="student-item">
+      <span>{item.name}</span>
+      <button onClick={() => setShowDelete(true)}>
         <img src={garbage} alt="a garbage can" />
       </button>
-      {showModal && (
-        <Modal>
-          <ConfirmSignedIn
-            message="student deleted"
-            setShowModal={setShowModal}
+      <Modal>
+        {showDelete && (
+          <ConfirmDeleteStudent
+            item={item}
+            courseId={courseId}
+            setter={setShowDelete}
           />
-        </Modal>
-      )}
+        )}
+      </Modal>
     </li>
   );
 }

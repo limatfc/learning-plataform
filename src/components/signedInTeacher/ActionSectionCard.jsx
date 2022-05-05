@@ -17,9 +17,14 @@ export default function ActionSectionCard({ find }) {
   return (
     <div>
       {data.map((item) => (
-        <div key={item.id}>
-          <img src={require(`../../assets/icons/${item.icon}`)} alt="an icon" />
-          <h3>{item.sectionTitle}</h3>
+        <div key={item.id} className="section-card">
+          <h3>
+            <img
+              src={require(`../../assets/icons/${item.icon}`)}
+              alt="an icon"
+            />
+            {item.sectionTitle}
+          </h3>
           <ActionActivityCard activities={activities} dbName={item.dbName} />
         </div>
       ))}

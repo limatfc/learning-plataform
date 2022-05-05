@@ -35,17 +35,22 @@ export default function LinkCreateForm({ id, type, action }) {
     return <ConfirmSignedIn message={"created"} setShowModal={action} />;
 
   return (
-    <div className="overlayer">
-      <form onSubmit={onCreate}>
-        <h3>To add a new {type}, please enter the information bellow</h3>
-        <InputField setup={info.name} actions={[setName, check]} />
-        <InputField setup={info.url} actions={[setURL, check]} />
-        <Select setter={setSection} />
-        <button type="submit">{label}</button>
-        <button type="button" onClick={action}>
-          Cancel
-        </button>
-      </form>
+    <div>
+      <div onClick={() => action(false)} className="backdrop"></div>
+      <div className="overlayer">
+        <form onSubmit={onCreate}>
+          <h3>To add a new {type}, please enter the information bellow</h3>
+          <InputField setup={info.name} actions={[setName, check]} />
+          <InputField setup={info.url} actions={[setURL, check]} />
+          <Select setter={setSection} />
+          <button className="label primary" type="submit">
+            {label}
+          </button>
+          <button className="label secundary" type="button" onClick={action}>
+            Cancel
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

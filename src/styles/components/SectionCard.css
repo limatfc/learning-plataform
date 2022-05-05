@@ -1,0 +1,13 @@
+.section-card {
+  margin-bottom: 65px;
+}
+
+.section-card h3 {
+  display: flex;
+  align-items: center;
+}
+
+.section-card h3 img {
+  height: 35px;
+  padding-right: 8px;
+}

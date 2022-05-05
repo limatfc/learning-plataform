@@ -2,9 +2,14 @@ import { Link } from "react-router-dom";
 
 export default function ConfirmSignedOut({ message, link }) {
   return (
-    <div className="overlayer">
-      <h1>{message}</h1>
-      <Link to={link}>Close</Link>
+    <div>
+      <div className="backdrop"></div>
+      <div className="overlayer">
+        <h3>{message}</h3>
+        <Link className="secundary label" to={link}>
+          Close
+        </Link>
+      </div>
     </div>
   );
 }

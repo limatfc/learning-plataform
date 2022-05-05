@@ -18,10 +18,12 @@ export default function ActionActivityCard({ dbName, activities }) {
     <div>
       {activity}
       {filteredItems.length === 0 && (
-        <>
+        <div className="empty-message">
           <img src={sad} alt="a sad face" />
-          <p>Oh no, looks like you won't have any fun in this section!</p>
-        </>
+          <p>
+            Oh no, looks like you haven't added anything to this section yet!
+          </p>
+        </div>
       )}
     </div>
   );

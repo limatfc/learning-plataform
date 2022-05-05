@@ -1,0 +1,12 @@
+.student-activity-card {
+}
+
+.empty-message {
+  display: flex;
+  align-items: center;
+}
+
+.empty-message img {
+  height: 30px;
+  padding-right: 8px;
+}

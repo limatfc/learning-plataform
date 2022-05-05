@@ -5,7 +5,7 @@ export default function FileInput({ setter, label }) {
   }
 
   return (
-    <label className="file-input">
+    <label className="file-input label">
       Upload {label}
       <input
         type="file"

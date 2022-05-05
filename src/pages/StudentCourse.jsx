@@ -14,16 +14,20 @@ export default function StudentCourse() {
   if (status === 0) return <Loading />;
   if (status === 2) return <Error />;
   return (
-    <div>
+    <div className="student-course">
       <header>
-        <h2>This is the {find.name} course</h2>
-        <p>{find.description}</p>
+        <h2>
+          Welcome to the <em>{find.name}</em> course
+        </h2>
+        <p className="description">{find.description}</p>
       </header>
       <div>
-        <h2> {find.name} fun activities</h2>
+        <h3>Let's have some fun!</h3>
         <SectionCard find={find} />
       </div>
-      <Link to="/student-dashboard">Go back</Link>
+      <Link className="label secundary" to="/student-dashboard">
+        Go back
+      </Link>
     </div>
   );
 }

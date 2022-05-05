@@ -1,17 +1,21 @@
 export default function CreateButtons({ actions }) {
   const { onOpenFileForm, onOpenLinkForm } = actions;
   return (
-    <header>
-      <button onClick={onOpenFileForm} value="file">
+    <header className="create-buttons">
+      <button className="label primary" onClick={onOpenFileForm} value="file">
         Create a file
       </button>
-      <button onClick={onOpenLinkForm} value="video">
+      <button className="label primary" onClick={onOpenLinkForm} value="video">
         Create a video
       </button>
-      <button onClick={onOpenFileForm} value="image">
+      <button className="label primary" onClick={onOpenFileForm} value="image">
         Create an image
       </button>
-      <button onClick={onOpenLinkForm} value="game">
+      <button
+        className="label primary last"
+        onClick={onOpenLinkForm}
+        value="game"
+      >
         Create a game
       </button>
     </header>

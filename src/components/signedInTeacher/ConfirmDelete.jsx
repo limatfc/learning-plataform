@@ -24,13 +24,20 @@ export default function ConfirmDelete({ setup }) {
   status === 0 ? (label = "Loading") : (label = "Yes, I am sure");
 
   if (status === 1)
-    return <ConfirmSignedIn message={"deleted"} setShowModal={setter} />;
+    return <ConfirmSignedIn message="deleted" setShowModal={setter} />;
 
   return (
-    <div className="overlayer">
-      <h2>Are you sure you want to delete the {item.name} item?</h2>
-      <button onClick={onDelete}>{label}</button>
-      <button onClick={() => setter(false)}>Cancel</button>
+    <div>
+      <div onClick={() => setter(false)} className="backdrop"></div>
+      <div className="overlayer">
+        <h3>Are you sure you want to delete the {item.name} item?</h3>
+        <button className="label primary" onClick={onDelete}>
+          {label}
+        </button>
+        <button className="label secundary" onClick={() => setter(false)}>
+          Cancel
+        </button>
+      </div>
     </div>
   );
 }

@@ -22,11 +22,12 @@ export default function ActionActivityItem({ item, courseId }) {
   if (item.type === "game") imageSrc = control;
 
   return (
-    <div>
+    <div className="action-activity-item">
       <a href={item.url} rel="noreferrer" target="_blank">
         <img src={imageSrc} alt="an icon" />
         {item.name}
       </a>
+      <div className="grow"></div>
       <button onClick={() => setDeleteModal(true)}>
         <img src={garbage} alt="a trash can icon" />
       </button>

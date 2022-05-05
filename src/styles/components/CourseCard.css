@@ -5,11 +5,11 @@
   flex-direction: column;
 }
 
-.even {
+.course-card .even {
   background-color: #b1bd8e;
 }
 
-.odd {
+.course-card .odd {
   background-color: #f8a163;
 }
 
