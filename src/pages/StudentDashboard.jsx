@@ -12,11 +12,14 @@ export default function StudentDashboard() {
   ));
 
   if (status === 0) return <Loading />;
-  if (status === 2) return <Error setup="" />;
+  if (status === 2) return <Error />;
   return (
     <div className="dashboard">
       <h2>Welcome {user.childName}</h2>
       <h3>My courses</h3>
+      {courses.length === 0 && (
+        <p>Oh no, looks like there are no courses yet!</p>
+      )}
       <div className="dashboard-card">{courseCards}</div>
     </div>
   );

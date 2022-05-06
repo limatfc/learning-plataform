@@ -25,7 +25,7 @@ export default function StudentCourse() {
         <h3>Let's have some fun!</h3>
         <SectionCard find={find} />
       </div>
-      <Link className="label secundary" to="/student-dashboard">
+      <Link className="label sec" to="/student-dashboard">
         Go back
       </Link>
     </div>

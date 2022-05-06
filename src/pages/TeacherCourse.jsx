@@ -7,7 +7,7 @@ import ActionSectionCard from "../components/signedInTeacher/ActionSectionCard";
 import CreateActivityMenu from "../components/signedInTeacher/CreateActivityMenu";
 
 export default function TeacherCourse() {
-  const { courses, coursesHandler, user } = useUserProvider();
+  const { courses, coursesHandler } = useUserProvider();
   const { status } = useReadData(coursesHandler, "courses");
   const { course } = useParams();
   const find = courses.find((item) => item.nameURL === course);
@@ -30,7 +30,7 @@ export default function TeacherCourse() {
       <div>
         <ActionSectionCard find={find} />
       </div>
-      <Link className="secundary label" to="/teacher-dashboard">
+      <Link className="sec label" to="/teacher-dashboard">
         Go back
       </Link>
     </div>

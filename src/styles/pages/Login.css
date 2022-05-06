@@ -20,13 +20,13 @@
   text-align: center;
 }
 
-.login .secundary {
+.login .sec {
   text-decoration: none;
   color: black;
 }
 
-.login .primary {
-  margin-bottom: 16px;
+.login .pri {
+  margin-top: 16px;
 }
 
 .login .last {

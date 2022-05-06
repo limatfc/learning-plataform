@@ -32,14 +32,14 @@ export default function ResetPassword() {
       </h3>
       <form onSubmit={onRecover}>
         <InputField setup={info.email} actions={[setEmail, checkEmail]} />
-        <button className="label primary">{label}</button>
+        <button className="label pri">{label}</button>
       </form>
       <p>Remembered your password?</p>
-      <Link className="secundary label" to="/login">
+      <Link className="sec label" to="/login">
         Login
       </Link>
       <p className="last">Don't have an account yet?</p>
-      <Link className="secundary" to="/sign-up">
+      <Link className="sec" to="/sign-up">
         Create account
       </Link>
       {status === 1 && (

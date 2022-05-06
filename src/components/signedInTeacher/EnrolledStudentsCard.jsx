@@ -7,7 +7,7 @@ export default function EnrolledStudentsCards({ course }) {
   const [showList, setShowList] = useState(false);
   const label = !showList ? "View List" : "Hide List";
 
-  const studentItem = course.students.map((item) => (
+  const studentItem = course?.students.map((item) => (
     <StudentItem item={item} key={item.id} courseId={course.id} />
   ));
 

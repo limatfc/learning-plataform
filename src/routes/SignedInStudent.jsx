@@ -5,7 +5,6 @@ import ResetPassword from "../pages/ResetPassword";
 import SignUp from "../pages/SignUp";
 import StudentDashboard from "../pages/StudentDashboard";
 import Error from "../pages/Error";
-import errorRoutes from "../data/routes.json";
 import StudentCourse from "../pages/StudentCourse";
 
 export default function SignedInStudent() {
@@ -17,7 +16,7 @@ export default function SignedInStudent() {
       <Route path="/sign-up" element={<SignUp />} />
       <Route path="/student-dashboard" element={<StudentDashboard />} />
       <Route path="/student-dashboard/:course" element={<StudentCourse />} />
-      <Route path="*" element={<Error setup={errorRoutes.signedInStudent} />} />
+      <Route path="*" element={<Error />} />
     </Routes>
   );
 }

@@ -9,7 +9,7 @@ import Select from "./Select";
 import data from "../../data/inputFields.json";
 
 export default function ActivityEditForm({ setup }) {
-  const [item, path, setEditForm, editActivity] = setup;
+  const [item, path, setter, editActivity] = setup;
   const [name, setName] = useState();
   const [inputedUrl, setURL] = useState(null);
   const [file, setFile] = useState();
@@ -42,11 +42,11 @@ export default function ActivityEditForm({ setup }) {
   status === 0 ? (label = "Loading") : (label = "Confirm changes");
 
   if (status === 1)
-    return <ConfirmSignedIn message={"edited"} setShowModal={setEditForm} />;
+    return <ConfirmSignedIn message={"edited"} setShowModal={setter} />;
 
   return (
     <div>
-      <div onClick={() => setEditForm(false)} className="backdrop"></div>
+      <div onClick={() => setter(false)} className="backdrop"></div>
       <div className="overlayer">
         <h3>To add a new {item.type}, please enter the information bellow</h3>
         <form onSubmit={onEdit}>
@@ -56,14 +56,10 @@ export default function ActivityEditForm({ setup }) {
           )}
           {filesType && <FileInput setter={setFile} label={item.type} />}
           <Select setter={setSection} />
-          <button className="primary" type="submit">
+          <button className="pri" type="submit">
             {label}
           </button>
-          <button
-            className="secundary"
-            type="button"
-            onClick={() => setEditForm(false)}
-          >
+          <button className="sec" type="button" onClick={() => setter(false)}>
             Cancel
           </button>
         </form>

@@ -21,20 +21,21 @@ export default function TeacherDashboard() {
   ));
 
   if (status === 0) return <Loading />;
-  if (status === 2) return <Error setup="" />;
+  if (status === 2) return <Error />;
   return (
     <div className="teacher-dashboard">
       <h2>Welcome teacher {user.name}!</h2>
       <h3>My courses</h3>
-      <button className="primary label" onClick={() => setShowModal(true)}>
+      <button className="pri label" onClick={() => setShowModal(true)}>
         Create a new course
       </button>
+      {courses.length === 0 && (
+        <p>Oh no, looks like there are no courses yet!</p>
+      )}
       <div className="teacher-dashboard-card">{courseCards}</div>
       <h3>My students</h3>
       <div>{enrolledStudentsCards}</div>
-      <Modal>
-        {showModal && <CourseCreateForm setShowModal={setShowModal} />}
-      </Modal>
+      <Modal>{showModal && <CourseCreateForm setter={setShowModal} />}</Modal>
     </div>
   );
 }

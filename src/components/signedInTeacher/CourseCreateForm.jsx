@@ -6,7 +6,7 @@ import ConfirmSignedIn from "./ConfirmSignedIn";
 import InputField from "../InputField";
 import data from "../../data/inputFields.json";
 
-export default function CourseCreateForm({ setShowModal }) {
+export default function CourseCreateForm({ setter }) {
   const { addCourse } = useUserProvider();
   const [name, setName] = useState();
   const [description, setDescription] = useState();
@@ -14,7 +14,6 @@ export default function CourseCreateForm({ setShowModal }) {
   const [imgDescription, setImgDescr] = useState();
   const [status, setStatus] = useState(null);
   const check = (item) => item !== "";
-  const emptyCheck = () => {};
   const info = data.courseCreateForm;
   const checkEmpty = check(name) || check(description) || check(imgDescription);
 
@@ -40,29 +39,22 @@ export default function CourseCreateForm({ setShowModal }) {
   status === 0 ? (label = "Loading") : (label = "Create new course");
 
   if (status === 1)
-    return <ConfirmSignedIn message={"created"} setShowModal={setShowModal} />;
+    return <ConfirmSignedIn message={"created"} setShowModal={setter} />;
 
   return (
     <div>
-      <div onClick={() => setShowModal(false)} className="backdrop"></div>
+      <div onClick={() => setter(false)} className="backdrop"></div>
       <div className="overlayer">
         <form onSubmit={onCreate}>
           <h3>To add a new course, please enter the information bellow</h3>
           <InputField setup={info.name} actions={[setName, check]} />
           <InputField setup={info.descr} actions={[setDescription, check]} />
-          <InputField
-            setup={info.imageURL}
-            actions={[setImageURL, emptyCheck]}
-          />
+          <InputField setup={info.imageURL} actions={[setImageURL, check]} />
           <InputField setup={info.imgDescr} actions={[setImgDescr, check]} />
-          <button className="primary" type="submit">
+          <button className="pri" type="submit">
             {label}
           </button>
-          <button
-            className="secundary"
-            type="button"
-            onClick={() => setShowModal(false)}
-          >
+          <button className="sec" type="button" onClick={() => setter(false)}>
             Cancel
           </button>
         </form>

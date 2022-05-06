@@ -1,11 +1,11 @@
 const localStorageKey = "userUID";
 
-export function setLocalStorage(key, uid) {
-  return localStorage.setItem(key, uid);
+export function setLocalStorage(uid) {
+  return localStorage.setItem(localStorageKey, uid);
 }
 
-export function getLocalStorage(key) {
-  return localStorage.getItem(key);
+export function getLocalStorage() {
+  return localStorage.getItem(localStorageKey);
 }
 
 export function removeItem() {

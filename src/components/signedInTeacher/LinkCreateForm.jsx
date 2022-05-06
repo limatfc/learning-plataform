@@ -43,10 +43,10 @@ export default function LinkCreateForm({ id, type, action }) {
           <InputField setup={info.name} actions={[setName, check]} />
           <InputField setup={info.url} actions={[setURL, check]} />
           <Select setter={setSection} />
-          <button className="primary" type="submit">
+          <button className="pri" type="submit">
             {label}
           </button>
-          <button className="secundary" type="button" onClick={action}>
+          <button className="sec" type="button" onClick={action}>
             Cancel
           </button>
         </form>

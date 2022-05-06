@@ -6,7 +6,7 @@ export default function ConfirmSignedOut({ message, link }) {
       <div className="backdrop"></div>
       <div className="overlayer">
         <h3>{message}</h3>
-        <Link className="secundary label" to={link}>
+        <Link className="sec label" to={link}>
           Close
         </Link>
       </div>

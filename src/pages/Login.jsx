@@ -8,11 +8,11 @@ export default function Login() {
       <h3>To start, login into your account:</h3>
       <LoginForm />
       <p>Forgot your password?</p>
-      <Link className="secundary label" to="/reset-password">
+      <Link className="sec label" to="/reset-password">
         Redefine password
       </Link>
       <p className="last">Don't have an account yet?</p>
-      <Link className="secundary label" to="/sign-up">
+      <Link className="sec label" to="/sign-up">
         Create account
       </Link>
     </div>

@@ -18,7 +18,7 @@ export default function SignUp() {
       </h3>
       <SignUpForm actions={{ setStatus }} label={label} />
       <p className="last">Already have an account?</p>
-      <Link className="secundary label" to="/login">
+      <Link className="sec label" to="/login">
         Login
       </Link>
       {status === 1 && (

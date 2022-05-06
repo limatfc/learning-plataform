@@ -4,7 +4,6 @@ import Landing from "../pages/Landing";
 import Login from "../pages/Login";
 import ResetPassword from "../pages/ResetPassword";
 import SignUp from "../pages/SignUp";
-import errorRoutes from "../data/routes.json";
 
 export default function SignedOut() {
   return (
@@ -13,7 +12,7 @@ export default function SignedOut() {
       <Route path="/login" element={<Login />} />
       <Route path="/reset-password" element={<ResetPassword />} />
       <Route path="/sign-up" element={<SignUp />} />
-      <Route path="*" element={<Error setup={errorRoutes.signedOut} />} />
+      <Route path="*" element={<Error />} />
     </Routes>
   );
 }
