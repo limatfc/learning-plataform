@@ -22,6 +22,7 @@ export default function NavBarLogIn() {
 
   return (
     <nav className="nav-login">
+      <h2>eEnglish</h2>
       <Link to={navigationHandler(user)}>
         <img src={home} alt="a house icon" />
       </Link>
