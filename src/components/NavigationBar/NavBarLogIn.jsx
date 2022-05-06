@@ -5,7 +5,6 @@ import home from "../../assets/icons/home.png";
 import logout from "../../assets/icons/logout.png";
 import slack from "../../assets/icons/slack.png";
 import zoom from "../../assets/icons/zoom.png";
-import book from "../../assets/icons/book.png";
 import { useNavigate, Link } from "react-router-dom";
 import navigationHandler from "../../scripts/logic/navigation-handler";
 

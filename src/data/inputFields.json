@@ -2,7 +2,7 @@
   "login": {
     "email": {
       "type": "email",
-      "label": "User Email",
+      "label": "Parent Email",
       "placeholder": "email@email.com",
       "errorMessage": "Email field must contain an '@' symbol",
       "required": true

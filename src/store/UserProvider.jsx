@@ -2,7 +2,8 @@ import { useCallback, useEffect, useState } from "react";
 import { getLocalStorage } from "../scripts/localStorage/localStorage";
 import { readDocument } from "../scripts/firebase/fireStore";
 import userContext from "./user-context";
-const localStorageKey = "userUID";
+import { editState, addState, deleteState } from "../scripts/logic/state";
+import { enrolleUser, deleteUser } from "../scripts/logic/state";
 
 export default function UserProvider({ children }) {
   const [uid, setUid] = useState();
@@ -12,7 +13,7 @@ export default function UserProvider({ children }) {
 
   useEffect(() => {
     async function onFirstLoad() {
-      const parse = getLocalStorage(localStorageKey);
+      const parse = getLocalStorage();
       if (parse) {
         setUid(parse);
       }
@@ -39,60 +40,45 @@ export default function UserProvider({ children }) {
   }
 
   function addCourse(inputedData) {
-    const copyCourses = [...courses];
-    copyCourses.push(inputedData);
-    setCourses(copyCourses);
+    const result = addState(courses, inputedData);
+    setCourses(result);
   }
 
   function editCourse(id, inputedData) {
-    const copyCourses = [...courses];
-    const findIndex = copyCourses.findIndex((item) => item.id === id);
-    copyCourses.splice(findIndex, 1, inputedData);
-    setCourses(copyCourses);
+    const result = editState(courses, id, inputedData);
+    setCourses(result);
   }
 
   function deleteCourse(id) {
-    const copyCourses = [...courses];
-    let findIndex = copyCourses.findIndex((item) => item.id === id);
-    copyCourses.splice(findIndex, 1);
-    setCourses(copyCourses);
+    const result = deleteState(courses, id);
+    setCourses(result);
   }
 
   function deleteActivity(id) {
-    const copyActivity = [...activities];
-    let findIndex = copyActivity.findIndex((item) => item.id === id);
-    copyActivity.splice(findIndex, 1);
-    setActivities(copyActivity);
+    const result = deleteState(activities, id);
+    setActivities(result);
   }
 
   function addActivity(inputedData) {
-    const copyActivity = [...activities];
-    copyActivity.push(inputedData);
-    setActivities(copyActivity);
+    const result = addState(activities, inputedData);
+    setActivities(result);
   }
 
   function editActivity(id, inputedData) {
-    const copyActivity = [...activities];
-    const findIndex = copyActivity.findIndex((item) => item.id === id);
-    copyActivity.splice(findIndex, 1, inputedData);
-    setActivities(copyActivity);
+    const result = editState(activities, id, inputedData);
+    setActivities(result);
   }
 
   function enrollStudent(studentDetails, courseId) {
-    const copyCourses = [...courses];
-    const find = copyCourses.find((item) => item.id === courseId);
-    find.students.push(studentDetails);
-    setCourses(copyCourses);
-    return find;
+    const result = enrolleUser(courses, courseId, studentDetails);
+    setCourses(result.copyCourses);
+    return result.find;
   }
 
   function deleteStudent(studentId, courseId) {
-    const copyCourses = [...courses];
-    const find = copyCourses.find((item) => item.id === courseId);
-    let findIndex = find.students.findIndex((item) => item.id === studentId);
-    find.students.splice(findIndex, 1);
-    setCourses(copyCourses);
-    return find;
+    const result = deleteUser(courses, courseId, studentId);
+    setCourses(result.copyCourses);
+    return result.find;
   }
 
   const coursesHandler = useCallback((courses) => {

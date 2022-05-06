@@ -29,6 +29,9 @@ export default function TeacherDashboard() {
       <button className="pri label" onClick={() => setShowModal(true)}>
         Create a new course
       </button>
+      {courses.length === 0 && (
+        <p>Oh no, looks like there are no courses yet!</p>
+      )}
       <div className="teacher-dashboard-card">{courseCards}</div>
       <h3>My students</h3>
       <div>{enrolledStudentsCards}</div>
