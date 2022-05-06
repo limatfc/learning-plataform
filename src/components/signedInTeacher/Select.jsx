@@ -9,6 +9,11 @@ export default function Select({ setter }) {
   ));
 
   return (
-    <select onChange={(event) => setter(event.target.value)}>{options}</select>
+    <label className=" select label">
+      Choose a section
+      <select onChange={(event) => setter(event.target.value)}>
+        {options}
+      </select>
+    </label>
   );
 }

@@ -50,10 +50,10 @@ export default function FileCreateForm({ id, type, action }) {
           <InputField setup={info.name} actions={[setName, check]} />
           <FileInput setter={setFile} label={type} />
           <Select setter={setSection} />
-          <button className="label primary" type="submit">
+          <button className="primary" type="submit">
             {label}
           </button>
-          <button className="label secundary" type="button" onClick={action}>
+          <button className="secundary" type="button" onClick={action}>
             Cancel
           </button>
         </form>

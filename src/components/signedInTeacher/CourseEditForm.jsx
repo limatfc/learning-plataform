@@ -48,11 +48,11 @@ export default function CourseEditForm({ oldCourse, setEditForm }) {
           <InputField setup={info.descr} actions={[setDescription, check]} />
           <InputField setup={info.imageURL} actions={[setImgURL, check]} />
           <InputField setup={info.imgDescr} actions={[setImgDescr, check]} />
-          <button className="label primary" type="submit">
+          <button className="primary" type="submit">
             {label}
           </button>
           <button
-            className="label secundary"
+            className="secundary"
             type="button"
             onClick={() => setEditForm(false)}
           >

@@ -20,3 +20,13 @@
   border-style: solid;
   border-radius: 5px;
 }
+
+@media (min-width: 750px) {
+  .input-field {
+    margin-bottom: 16px;
+  }
+
+  .input-field input {
+    width: 700px;
+  }
+}

@@ -1,3 +1,13 @@
 .checkbox {
   font-size: 20px;
+  text-decoration: underline;
+}
+
+@media (min-width: 750px) {
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }

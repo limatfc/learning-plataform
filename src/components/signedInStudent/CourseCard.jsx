@@ -27,20 +27,19 @@ export default function CourseCard({ course, index }) {
   }
 
   let label = status === 0 ? "Enrolling" : "Enroll in this course";
-  let style = index % 2 == 0 ? "even" : "odd";
+  let style = index % 2 == 0 ? "courseEven" : "courseOdd";
   return (
     <div className={`${style} course-card`}>
       <Link className="link" to={`/student-dashboard/${course.nameURL}`}>
         <img src={course.imageURL} alt={course.imageDescription} />
         <span className="label">{course.name}</span>
       </Link>
-      <small>
-        {error && "Looks like you are already enrolled in this course"}
-      </small>
-      <label className="checkbox">
-        {label}
-        <input type="checkbox" onChange={onEnroll} checked={checked} />
-      </label>
+      {!checked && (
+        <label className="checkbox">
+          {label}
+          <input type="checkbox" onChange={onEnroll} />
+        </label>
+      )}
       {showModal && (
         <Modal>
           <ConfirmSignedIn setShowModal={setShowModal} message="enrolled" />

@@ -26,10 +26,10 @@ export default function ConfirmDeleteStudent({ item, courseId, setter }) {
           Are you sure you want to delete the student {item.name} from this
           course?
         </h3>
-        <button className="primary label" onClick={onDelete}>
+        <button className="primary" onClick={onDelete}>
           Yes, I am sure
         </button>
-        <button className="secundary label" onClick={() => setter(false)}>
+        <button className="secundary" onClick={() => setter(false)}>
           Cancel
         </button>
       </div>

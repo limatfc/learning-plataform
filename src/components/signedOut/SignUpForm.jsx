@@ -45,7 +45,7 @@ export default function SignUpForm({ actions, label }) {
       <InputField setup={info.parentName} actions={[setParentName, check]} />
       <InputField setup={info.email} actions={[setEmail, checkEmail]} />
       <InputField setup={info.pass} actions={[setPassword, checkPassword]} />
-      <button className="primary label">{label}</button>
+      <button className="primary">{label}</button>
     </form>
   );
 }

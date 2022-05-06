@@ -27,18 +27,18 @@ export default function LoginForm() {
     const uid = await loginUser(email, password);
     setStatus(2);
     if (uid) user = await readDoc(uidHandler, uid, setStatus);
-    user.id = uid;
     if (user) {
+      user.id = uid;
       if (keepLogin) saveUser(userHandler, user);
       await navigateUser(user, navigate);
     }
   }
 
   return (
-    <form onSubmit={onLogin}>
+    <form className="login-form" onSubmit={onLogin}>
       <InputField setup={info.email} actions={[setEmail, checkEmail]} />
       <InputField setup={info.pass} actions={[setPassword, checkPassword]} />
-      <button className="primary label">{label}</button>
+      <button className="primary">{label}</button>
       <label className="checkbox">
         <input type="checkbox" onChange={() => setKeepLogin(true)} />
         Keep me connected

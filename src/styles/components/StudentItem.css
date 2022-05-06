@@ -12,3 +12,14 @@
   align-self: end;
   justify-self: flex-end;
 }
+
+@media (min-width: 750px) {
+  .student-item span {
+    width: 95%;
+  }
+  .student-item button {
+    width: 5%;
+    align-self: end;
+    justify-self: flex-end;
+  }
+}

@@ -80,7 +80,7 @@
       "type": "text",
       "label": "Image link",
       "placeholder": "http://google.com/image",
-      "errorMessage": "",
+      "errorMessage": "Link must be completed",
       "required": false
     },
     "imgDescr": {
@@ -110,7 +110,7 @@
       "type": "text",
       "label": "Image link",
       "placeholder": "http://google.com/image",
-      "errorMessage": "",
+      "errorMessage": "Link must be completed",
       "required": false
     },
     "imgDescr": {

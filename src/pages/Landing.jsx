@@ -38,7 +38,7 @@ export default function Landing() {
       </section>
       <section className="landing-findus">
         <h2>Find us</h2>
-        {findUsInfo}
+        <div className="find-us-all">{findUsInfo}</div>
       </section>
     </div>
   );
