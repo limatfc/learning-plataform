@@ -30,9 +30,7 @@ export default function ActionCourseCard({ course, index }) {
         {deleteModal && (
           <ConfirmDelete setup={[course, path, setDeleteModal, deleteCourse]} />
         )}
-        {editForm && (
-          <CourseEditForm oldCourse={course} setEditForm={setEditForm} />
-        )}
+        {editForm && <CourseEditForm oldCourse={course} setter={setEditForm} />}
       </Modal>
     </div>
   );
