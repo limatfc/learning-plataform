@@ -5,7 +5,7 @@ import { editDocument } from "../../scripts/firebase/fireStore";
 import ConfirmSignedIn from "./ConfirmSignedIn";
 import useUserProvider from "../../store/useUserProvider";
 
-export default function CourseEditForm({ oldCourse, setEditForm }) {
+export default function CourseEditForm({ oldCourse, setter }) {
   const { editCourse } = useUserProvider();
   const [name, setName] = useState();
   const [description, setDescription] = useState();
@@ -37,11 +37,11 @@ export default function CourseEditForm({ oldCourse, setEditForm }) {
   status === 0 ? (label = "Loading") : (label = "Confirm changes");
 
   if (status === 1)
-    return <ConfirmSignedIn message={"edited"} setShowModal={setEditForm} />;
+    return <ConfirmSignedIn message={"edited"} setShowModal={setter} />;
 
   return (
     <div>
-      <div onClick={() => setEditForm(false)} className="backdrop"></div>
+      <div onClick={() => setter(false)} className="backdrop"></div>
       <div className="overlayer">
         <form onSubmit={onEdit}>
           <h3>Edit {oldCourse.name} course information</h3>
@@ -52,11 +52,7 @@ export default function CourseEditForm({ oldCourse, setEditForm }) {
           <button className="pri" type="submit">
             {label}
           </button>
-          <button
-            className="sec"
-            type="button"
-            onClick={() => setEditForm(false)}
-          >
+          <button className="sec" type="button" onClick={() => setter(false)}>
             Cancel
           </button>
         </form>
