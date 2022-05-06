@@ -18,12 +18,12 @@ export default function Landing() {
     <div className="landing">
       <LandingHero />
       <section className="landing-courses-wrapper">
-        <h2>Courses</h2>
+        <h2 className="title">Courses</h2>
         {coursesInfo}
         <img className="separator" src={icon} alt="three dots in sequence" />
       </section>
       <section className="landing-prices">
-        <h2>Prices</h2>
+        <h2 className="title">Prices</h2>
         <img
           className="prices"
           src={image06}
@@ -37,7 +37,7 @@ export default function Landing() {
         <img className="separator" src={icon} alt="three horizontal dots" />
       </section>
       <section className="landing-findus">
-        <h2>Find us</h2>
+        <h2 className="title">Find us</h2>
         <div className="find-us-all">{findUsInfo}</div>
       </section>
     </div>

@@ -20,8 +20,8 @@ export default function CourseEditForm({ oldCourse, setEditForm }) {
   async function onEdit(event) {
     event.preventDefault();
     if (checkEmpty) return null;
-    const mainData = { name, description, imageURL };
-    const extraData = { imageDescription: imgDescr, id: oldCourse.id };
+    const mainData = { description, imageURL, students: oldCourse.students };
+    const extraData = { imageDescription: imgDescr, id: oldCourse.id, name };
     const inputedData = { ...mainData, ...extraData };
     setStatus(0);
     const result = await editDocument("courses", oldCourse.id, inputedData);
@@ -48,11 +48,11 @@ export default function CourseEditForm({ oldCourse, setEditForm }) {
           <InputField setup={info.descr} actions={[setDescription, check]} />
           <InputField setup={info.imageURL} actions={[setImgURL, check]} />
           <InputField setup={info.imgDescr} actions={[setImgDescr, check]} />
-          <button className="primary" type="submit">
+          <button className="pri" type="submit">
             {label}
           </button>
           <button
-            className="secundary"
+            className="sec"
             type="button"
             onClick={() => setEditForm(false)}
           >

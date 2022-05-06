@@ -12,7 +12,7 @@ export default function StudentDashboard() {
   ));
 
   if (status === 0) return <Loading />;
-  if (status === 2) return <Error setup="" />;
+  if (status === 2) return <Error />;
   return (
     <div className="dashboard">
       <h2>Welcome {user.childName}</h2>

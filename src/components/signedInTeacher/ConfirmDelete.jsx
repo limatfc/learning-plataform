@@ -31,10 +31,10 @@ export default function ConfirmDelete({ setup }) {
       <div onClick={() => setter(false)} className="backdrop"></div>
       <div className="overlayer">
         <h3>Are you sure you want to delete the {item.name} item?</h3>
-        <button className="primary" onClick={onDelete}>
+        <button className="pri" onClick={onDelete}>
           {label}
         </button>
-        <button className="secundary" onClick={() => setter(false)}>
+        <button className="sec" onClick={() => setter(false)}>
           Cancel
         </button>
       </div>

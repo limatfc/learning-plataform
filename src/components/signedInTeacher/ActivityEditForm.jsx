@@ -56,11 +56,11 @@ export default function ActivityEditForm({ setup }) {
           )}
           {filesType && <FileInput setter={setFile} label={item.type} />}
           <Select setter={setSection} />
-          <button className="primary" type="submit">
+          <button className="pri" type="submit">
             {label}
           </button>
           <button
-            className="secundary"
+            className="sec"
             type="button"
             onClick={() => setEditForm(false)}
           >

@@ -42,7 +42,7 @@ export default function LoginForm() {
         <input type="checkbox" onChange={() => setKeepLogin(true)} />
         Keep me connected
       </label>
-      <button className="primary">{label}</button>
+      <button className="pri">{label}</button>
     </form>
   );
 }

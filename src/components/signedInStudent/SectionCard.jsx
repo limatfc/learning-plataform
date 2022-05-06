@@ -12,7 +12,7 @@ export default function SectionCard({ find }) {
   );
 
   if (status === 0) return null;
-  if (status === 2) return <Error setup="" />;
+  if (status === 2) return <Error />;
 
   const sections = data.map((item) => (
     <div className="section-card" key={item.icon}>

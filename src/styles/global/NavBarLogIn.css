@@ -1,0 +1,18 @@
+.nav-login {
+  height: 70px;
+  margin: 0 16px 16px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 2px -2px gray;
+}
+
+.nav-login button {
+  background-color: transparent;
+  border: none;
+  width: 50px;
+}
+
+.nav-login button :hover {
+  cursor: pointer;
+}

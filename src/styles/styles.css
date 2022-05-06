@@ -7,6 +7,8 @@
 @import "./global/Buttons.css";
 @import "./global/NavBarLogOut.css";
 @import "./global/NavBarLogIn.css";
+@import "./global/Loading.css";
+@import "./global/Error.css";
 
 /* pages */
 @import "./pages/Landing.css";

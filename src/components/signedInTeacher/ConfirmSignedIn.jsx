@@ -5,7 +5,7 @@ export default function ConfirmSignedIn({ setShowModal, message }) {
       <div className="overlayer">
         <h3>YAY, {message} successfully!</h3>
         <button
-          className="secundary"
+          className="sec"
           type="button"
           onClick={() => setShowModal(false)}
         >

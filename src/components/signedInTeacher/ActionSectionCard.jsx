@@ -12,7 +12,7 @@ export default function ActionSectionCard({ find }) {
   );
 
   if (status === 0) return null;
-  if (status === 2) return <Error setup="" />;
+  if (status === 2) return <Error />;
 
   return (
     <div>

@@ -6,11 +6,13 @@ import logout from "../../assets/icons/logout.png";
 import slack from "../../assets/icons/slack.png";
 import zoom from "../../assets/icons/zoom.png";
 import book from "../../assets/icons/book.png";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import navigationHandler from "../../scripts/logic/navigation-handler";
 
 export default function NavBarLogIn() {
   const navigate = useNavigate();
-  const { uidHandler } = useUserProvider();
+  const { user, uidHandler } = useUserProvider();
+  const calendarLink = "https://calendar.google.com/calendar/u/0/r";
 
   function onLogOut() {
     removeItem();
@@ -19,12 +21,19 @@ export default function NavBarLogIn() {
   }
 
   return (
-    <nav>
-      <img src={home} alt="a house icon" />
-      <img src={book} alt="a book icon" />
-      <img src={zoom} alt="the zoom icon" />
-      <img src={calendar} alt="a calendar icon" />
-      <img src={slack} alt="the slack icon" />
+    <nav className="nav-login">
+      <Link to={navigationHandler(user)}>
+        <img src={home} alt="a house icon" />
+      </Link>
+      <a href="https://www.zoom.us/" target="_blank" rel="noreferrer">
+        <img src={zoom} alt="the zoom icon" />
+      </a>
+      <a href={calendarLink} target="_blank" rel="noreferrer">
+        <img src={calendar} alt="a calendar icon" />
+      </a>
+      <a href="https://slack.com/intl/pt-br/" target="_blank" rel="noreferrer">
+        <img src={slack} alt="the slack icon" />
+      </a>
       <button onClick={onLogOut}>
         <img src={logout} alt="the logout icon" />
       </button>
