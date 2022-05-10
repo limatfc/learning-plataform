@@ -8,6 +8,7 @@ import ActionCourseCard from "../components/signedInTeacher/ActionCourseCard";
 import CourseCreateForm from "../components/signedInTeacher/CourseCreateForm";
 import EnrolledStudentsCards from "../components/signedInTeacher/EnrolledStudentsCard";
 
+// good
 export default function TeacherDashboard() {
   const [showModal, setShowModal] = useState(false);
   const { coursesHandler, courses, user } = useUserProvider();

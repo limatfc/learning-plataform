@@ -5,6 +5,7 @@ import courseData from "../data/landing.json";
 import image06 from "../assets/images/landing-06.png";
 import icon from "../assets/icons/separator.png";
 
+// Good
 export default function Landing() {
   const coursesInfo = courseData.courses.map((item, index) => (
     <LandingCourses item={item} key={item.text} index={index} />

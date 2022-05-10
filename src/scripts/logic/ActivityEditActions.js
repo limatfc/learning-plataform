@@ -1,6 +1,7 @@
 import { editDocument } from "../firebase/fireStore";
 import { uploadFile } from "../../scripts/firebase/cloudStorage";
 
+// Activities actions is like watery water? running runner? Sounds weird
 export async function urlComesFromALink(data) {
   const { path, id, inputedData, setStatus, editActivity } = data;
   const result = await editDocument(path, id, inputedData);

@@ -5,6 +5,7 @@ import Login from "../pages/Login";
 import ResetPassword from "../pages/ResetPassword";
 import SignUp from "../pages/SignUp";
 
+// Great
 export default function SignedOut() {
   return (
     <Routes>

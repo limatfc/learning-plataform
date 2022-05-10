@@ -6,6 +6,7 @@ import Error from "../pages/Error";
 import ActionSectionCard from "../components/signedInTeacher/ActionSectionCard";
 import CreateActivityMenu from "../components/signedInTeacher/CreateActivityMenu";
 
+//  good
 export default function TeacherCourse() {
   const { courses, coursesHandler } = useUserProvider();
   const { status } = useReadData(coursesHandler, "courses");

@@ -7,6 +7,7 @@ import StudentDashboard from "../pages/StudentDashboard";
 import Error from "../pages/Error";
 import StudentCourse from "../pages/StudentCourse";
 
+// Great
 export default function SignedInStudent() {
   return (
     <Routes>

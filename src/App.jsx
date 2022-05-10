@@ -12,6 +12,11 @@ export default function App() {
   return (
     <BrowserRouter>
       <NavigationBar />
+      {/* Very, very clean. You see good code is pleasant to see/read */}
+      {/* Joking aside this is a very nice impression for a recruiter that does not know you */}
+
+      {/* Only detail: Put the true statmeents first and then the false statment */}
+      {/* In other words, put the SignedOut last.  */}
       {!uid && <SignedOut />}
       {uid && user?.role === "teacher" && <SignedInTeacher />}
       {uid && user?.role === "student" && <SignedInStudent />}

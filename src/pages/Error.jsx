@@ -13,6 +13,7 @@ export default function Error() {
       <Link className="pri" to="/">
         Go back to the home page
       </Link>
+      {/* What is that ";" down here?? ⬇ */}
       ;
     </div>
   );

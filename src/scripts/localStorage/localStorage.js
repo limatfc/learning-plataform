@@ -1,5 +1,6 @@
 const localStorageKey = "userUID";
 
+// Hey! nice idea!!!
 export function setLocalStorage(uid) {
   return localStorage.setItem(localStorageKey, uid);
 }

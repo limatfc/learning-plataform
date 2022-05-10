@@ -5,6 +5,7 @@ import Loading from "./Loading";
 import SectionCard from "../components/signedInStudent/SectionCard";
 import Error from "../pages/Error";
 
+// good
 export default function StudentCourse() {
   const { courses, coursesHandler } = useUserProvider();
   const { status } = useReadData(coursesHandler, "courses");

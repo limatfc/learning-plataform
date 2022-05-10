@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import LoginForm from "../components/signedOut/LoginForm";
 
+// To be honest, im not conviced that the form should be  separate entity.
 export default function Login() {
   return (
     <div className="login">

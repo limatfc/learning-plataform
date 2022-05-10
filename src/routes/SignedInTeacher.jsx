@@ -7,6 +7,7 @@ import TeacherDashboard from "../pages/TeacherDashboard";
 import TeacherCourse from "../pages/TeacherCourse";
 import Error from "../pages/Error";
 
+// Great
 export default function SignedInTeacher() {
   return (
     <Routes>
